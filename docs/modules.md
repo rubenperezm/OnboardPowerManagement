@@ -82,3 +82,15 @@ The TelemetryLogger module collects telemetry data and records it for analysis a
 
 **Notes:**  
 This module is non-critical and intentionally decoupled from the operational logic. It supports verification, validation, and engineering analysis.
+
+# Boundaries of Modules
+The boundaries of the modules within the Onboard Power Management subsystem are defined in this document to ensure clear separation of responsibilities and facilitate integration.
+
+All module boundaries are treated as formal software interfaces, allowing independent development, testing, and verification of each module.
+
+- **BatteryMonitor → PowerManager, TelemetryLogger**: Provides simulated power sensor measurements (voltage, current, temperature).
+- **FaultInjector → PowerManager, TelemetryLogger**: Injects simulated faults and anomalies into power data.
+- **PowerManager → SubsystemController, TelemetryLogger**: Sends power management decisions and mode commands.
+- **SubsystemController → PowerManager, TelemetryLogger**: Provides load status and operational context feedback.
+
+The telemetry logging module is designed to be non-intrusive and does not affect the operational behaviour of the other modules.
