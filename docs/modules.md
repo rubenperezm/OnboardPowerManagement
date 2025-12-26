@@ -40,7 +40,7 @@ The PowerManager module implements the main decision-making logic of the subsyst
 **Role:** Off-nominal scenario generator
 
 **Description:**  
-The FaultInjector module is used to introduce controlled faults and disturbances into the system in order to evaluate Power Manager behaviour under non-nominal conditions.
+The FaultInjector module is used to introduce controlled faults and disturbances into the system in order to evaluate PowerManager behaviour under non-nominal conditions.
 
 **Responsibilities:**
 - Inject simulated sensor faults and power anomalies
@@ -61,7 +61,7 @@ This module exists primarily to support verification and validation activities a
 The SubsystemController module represents downstream subsystems or loads that are affected by power management decisions.
 
 **Responsibilities:**
-- Communicates to Power Manager mode and command outputs
+- Communicates to PowerManager mode and command outputs
 - Simulate enabling and disabling of loads
 - Reflect system-level effects of power management decisions
 - Publish status information (if required)
@@ -82,3 +82,26 @@ The TelemetryLogger module collects telemetry data and records it for analysis a
 
 **Notes:**  
 This module is non-critical and intentionally decoupled from the operational logic. It supports verification, validation, and engineering analysis.
+
+## 6. SensorHealthManager
+**Role:** Sensor health status aggregator
+**Description:**
+The SensorHealthManager module consolidates health status information from multiple BatteryMonitor and FaultInjector modules to provide a unified view of sensor validity to the PowerManager.
+
+**Responsibilities:**
+- Receive health status from BatteryMonitor and FaultInjector
+- Aggregate and evaluate sensor health data
+- Send consolidated sensor health status to PowerManager
+---
+
+# Boundaries of Modules
+The boundaries of the modules within the Onboard Power Management subsystem are defined in this document to ensure clear separation of responsibilities and facilitate integration.
+
+All module boundaries are treated as formal software interfaces, allowing independent development, testing, and verification of each module.
+
+- **BatteryMonitor → PowerManager, TelemetryLogger**: Provides simulated power sensor measurements (voltage, current, temperature).
+- **FaultInjector → PowerManager, TelemetryLogger**: Injects simulated faults and anomalies into power data.
+- **PowerManager → SubsystemController, TelemetryLogger**: Sends power management decisions and mode commands.
+- **SubsystemController → PowerManager, TelemetryLogger**: Provides load status and operational context feedback.
+
+The telemetry logging module is designed to be non-intrusive and does not affect the operational behaviour of the other modules.
