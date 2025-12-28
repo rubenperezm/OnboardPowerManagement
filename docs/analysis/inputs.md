@@ -82,8 +82,19 @@ Represents external commands affecting power management behaviour, such as forci
 
 ---
 
+# Nominal Ranges
+
+| Sensor               | Nominal Range       | Units  | Notes                                           |
+|----------------------|------------------|-------|------------------------------------------------|
+| Battery Voltage      | 24.0 ± 4.0       | V     | NORMAL operation: 20V to 28V                  |
+| Battery Current      | 0 - 50            | A     | Max continuous load                             |
+| Battery Temperature  | 0 - 45             | °C    | Sensor operating range                           |
+| Load Status (sim)    | 0 - 100           | %     | Represents % of nominal power consumption      |
+| Operational Mode     | NORMAL, SAFE, OFF  | -     | Enum used by PowerManager                       |
+| Sensor Health Status | OK, DEGRADED, FAILED | -   | Derived from BatteryMonitor + FaultInjector    |
+
+
 ## 3. Notes and Assumptions
 
 - All inputs are assumed to be time-varying unless otherwise stated.
 - Input data is assumed to be provided by external modules via well-defined interfaces.
-- Detailed data types, ranges, units, and communication mechanisms are defined in subsequent interface and design documentation.
