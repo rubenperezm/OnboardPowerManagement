@@ -6,10 +6,7 @@ ECSS-like V&amp;V for an onboard power management subsystem simulator with DDS c
 ## Introduction
 This project aims to develop a software simulator for an onboard power management subsystem, adhering to ECSS standards for verification and validation (V&amp;V). Documentation is structured to cover all the necessary aspects of system engineering, from requirements to design and analysis, following the V-Model approach.
 
-<img src="docs/imgs/v-model.svg" alt="V-Model Overview" style="background-color: white;"/>
-<figcaption style="text-align: center; font-style: italic;">
-    Figure 1: V-Model Overview
-</figcaption>
+![V-Model Overview](docs/imgs/v-model.svg)
 
 It is not meant to produce formal deliverables such as System Requirements Specification (SRS), Preliminary Design Reviews (PDR), or other official project milestones. Instead, it provides the necessary groundwork and detailed information that would typically be used to create such deliverables in a real-world project setting.
 

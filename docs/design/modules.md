@@ -99,8 +99,9 @@ The boundaries of the modules within the Onboard Power Management subsystem are 
 
 All module boundaries are treated as formal software interfaces, allowing independent development, testing, and verification of each module.
 
+- **BatteryMonitor, FaultInjector → SensorHealthManager, TelemetryLogger**: Provide individual sensor health status.
+- **SensorHealthManager → PowerManager**: Provides consolidated sensor health status.
 - **BatteryMonitor → PowerManager, TelemetryLogger**: Provides simulated power sensor measurements (voltage, current, temperature).
-- **FaultInjector → PowerManager, TelemetryLogger**: Injects simulated faults and anomalies into power data.
 - **PowerManager → SubsystemController, TelemetryLogger**: Sends power management decisions and mode commands.
 - **SubsystemController → PowerManager, TelemetryLogger**: Provides load status and operational context feedback.
 

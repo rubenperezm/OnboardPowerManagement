@@ -1,0 +1,143 @@
+# Software Architecture
+
+## 1. Introduction
+
+This document describes the preliminary software architecture of the Onboard Power Management Subsystem simulator.
+
+The document shall be read in conjunction with the following artefacts:
+- System scope definition (`scope.md`)
+- Module decomposition (`modules.md`)
+- Input and output definitions (`inputs.md`, `outputs.md`)
+- Communication topics definition (`topics.md`)
+- Functional and non-functional requirements
+
+---
+
+---
+## 2. Architectural Drivers and Constraints
+The software subsystem is implemented in C++ and relies on a DDS-based middleware for inter-module communication, running on a Linux-based execution environment. The following architectural drivers and constraints have been identified for the Power Management Subsystem simulator:
+- **Modularity:** The architecture must support a modular decomposition where each module has a clearly defined responsibility and interfaces.
+- **Determinism:** The software must exhibit deterministic behaviour under identical input conditions to support verification
+    and validation activities.
+- **Observability:** The architecture must facilitate comprehensive telemetry generation and logging without interfering with operational logic.
+- **Middleware Abstraction:** The architecture must abstract the middleware layer to allow flexibility in middleware implementation
+    and support different execution environments.
+- **Fault Containment:** The architecture must separate fault handling from nominal functional logic to support robust
+    operation and facilitate testing under off-nominal conditions.
+
+## 3. Architectural Overview
+
+The software architecture is based on a modular decomposition where each module has a clearly defined responsibility.
+Modules communicate exclusively through well-defined data interfaces and do not share internal state.
+
+The architecture separates:
+- Data acquisition
+- Decision logic
+- Fault handling
+- Telemetry and logging
+
+This separation supports independent development, verification, and validation of each module.
+
+---
+
+## 4. Logical Module Architecture
+
+The logical modules of the subsystem are defined in detail in `modules.md`.
+At architectural level, the main modules are:
+- BatteryMonitor
+- SensorHealthManager
+- PowerManager
+- SubsystemController
+- TelemetryLogger
+- FaultInjector (simulation-only)
+
+Each module operates as an independent software entity and interacts with other modules exclusively through
+defined communication topics.
+
+---
+
+## 5. Execution Model
+
+### 5.1 Time-Triggered Execution
+
+The software follows a time-triggered execution model.
+Subsystem behaviour is evaluated periodically according to a fixed execution cycle.
+
+The execution cycle consists of the following high-level steps:
+1. Acquisition of input data
+2. Evaluation of power state and health
+3. Operational mode decision
+4. Generation of outputs and telemetry
+
+The execution period is a configurable parameter and will be defined during detailed design and analysis.
+
+### 5.2 Determinism
+
+The execution order of functional steps within the cycle is deterministic.
+This ensures reproducible behaviour under identical input conditions, supporting verification and validation activities.
+
+---
+
+## 6. Data Flow and Communication
+
+### 6.1 Data Flow Principles
+
+All inter-module communication is performed via explicit data exchanges.
+Modules act as producers or consumers of specific data types.
+
+### 6.2 Communication Topics
+
+The communication topics used by the software are defined in `topics.md`.
+Each topic is owned by a single producer and may have multiple consumers.
+
+The use of publish–subscribe communication supports:
+- Loose coupling between modules
+- Non-intrusive telemetry logging
+- Integration of simulation and ground support tools
+
+---
+
+## 7. Middleware Abstraction
+
+The architecture assumes the use of a middleware layer providing publish–subscribe communication semantics.
+The middleware implementation is abstracted from the application logic.
+
+This abstraction allows:
+- Replacement of the middleware implementation without architectural changes
+- Support for different execution environments (laboratory, simulation)
+
+Middleware configuration details are addressed during detailed design.
+
+---
+
+## 8. Fault Containment and Simulation Support
+
+Fault handling is architecturally separated from nominal functional logic.
+
+The SensorHealthManager is responsible for evaluating the validity and health of sensor data.
+Fault injection is supported through a dedicated simulation-only module.
+
+The PowerManager is agnostic to whether faults originate from real sensors or simulated injection,
+ensuring consistent behaviour across operational and laboratory configurations.
+
+---
+
+## 9. Telemetry and Observability
+
+Telemetry generation is treated as a first-class architectural concern.
+
+Telemetry data is:
+- Generated by functional modules
+- Published via dedicated communication topics
+- Collected by the TelemetryLogger module
+
+This approach ensures that telemetry collection does not interfere with operational logic.
+
+---
+
+## 10. Assumptions and Limitations
+
+The following assumptions apply at architectural level:
+- Electrical behaviour is represented at an abstract level
+- Hardware-specific timing constraints are not enforced
+- Hard real-time guarantees are not provided
