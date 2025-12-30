@@ -21,16 +21,10 @@ This document lists the functional requirements (FR) of the Power Management Sub
 | REQ-PWR-015    | The software shall consume consolidated sensor health information. |
 | REQ-PWR-016    | The software shall ignore sensor data marked as invalid by sensor health information. |
 | REQ-PWR-017    | The software shall continue operation in a degraded mode when non-critical sensor faults are detected. |
-| REQ-PWR-018    | The software shall control electrical loads based on the current operational mode. |
-| REQ-PWR-019    | The software shall disable non-essential loads when operating in `SAFE` mode. |
-| REQ-PWR-020    | The software shall ensure that critical loads remain powered whenever possible. |
-| REQ-PWR-021    | The software shall provide telemetry outputs reflecting the current operational mode. |
-| REQ-PWR-022    | The software shall provide telemetry outputs reflecting detected fault and health conditions. |
-| REQ-PWR-023    | The software shall provide telemetry outputs reflecting load control decisions. |
-| REQ-PWR-024    | The software shall detect and respond to fault conditions affecting power availability. |
-| REQ-PWR-025    | The software shall prioritise system safety over performance when handling faults. |
-| REQ-PWR-026    | The software shall recover from transient fault conditions when input values return to acceptable ranges. |
-| REQ-PWR-027    | The software shall report health status as `DEGRADED` if measurements approach 95% of voltage/current limits. |
-| REQ-PWR-028    | The software shall report health status as `FAILED` if measurements exceed 110% of voltage/current limits. |
-| REQ-PWR-029    | Operational mode shall be set to `OFF` if critical sensor failure is detected. |
-| REQ-PWR-030    | PowerManager shall not exceed predefined current limits under any load condition. |
+| REQ-PWR-018    | The software shall provide telemetry outputs reflecting the current operational mode. |
+| REQ-PWR-019    | The software shall provide telemetry outputs reflecting detected fault and health conditions. |
+| REQ-PWR-020    | The software shall provide telemetry outputs reflecting load control decisions. |
+| REQ-PWR-021    | The software shall detect and respond to fault conditions affecting power availability. |
+| REQ-PWR-022    | The software shall prioritise system safety over performance when handling faults. |
+| REQ-PWR-023    | The software shall recover from transient fault conditions when input values return to acceptable ranges. |
+| REQ-PWR-024    | Operational mode shall be set to `OFF` if critical sensor failure is detected. |
