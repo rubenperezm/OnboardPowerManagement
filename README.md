@@ -1,8 +1,6 @@
 # OnboardPowerManagement
 ECSS-like V&amp;V for an onboard power management subsystem simulator with DDS communication.
 
-
-
 ## Introduction
 This project aims to develop a software simulator for an onboard power management subsystem, adhering to ECSS standards for verification and validation (V&amp;V). Documentation is structured to cover all the necessary aspects of system engineering, from requirements to design and analysis, following the V-Model approach.
 
@@ -20,3 +18,7 @@ It is not meant to produce formal deliverables such as System Requirements Speci
 - [7. Module Definitions](docs/design/modules.md)
 - [8. Topic Definitions](docs/design/topics.md)
 - [9. Architecture Overview](docs/design/architecture.md)
+- [10. Detailed Design](docs/design/detailed_design.md)
+- [11. V&V Plan](docs/verification/v&v_plan.md)
+- [11. Verification Matrix](docs/verification/verification_matrix.md)
+- [12. Test Specifications](docs/verification/test_specs)
