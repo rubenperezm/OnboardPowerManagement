@@ -16,3 +16,10 @@ Non-essential loads are disabled to preserve energy.
 ## OFF
 The subsystem is not providing power to loads.
 Only minimal monitoring functions may remain active.
+
+# Valid Transitions Between Modes
+| From \ To | NORMAL | SAFE | OFF |
+|-----------|--------|------|-----|
+| NORMAL    |   Y    |  Y   |  Y  |
+| SAFE      |   Y    |  Y   |  Y  |
+| OFF       |   Y    |  N   |  Y  |
