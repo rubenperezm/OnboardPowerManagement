@@ -23,7 +23,7 @@ This document lists the functional requirements (FR) of the Power Management Sub
 | REQ-PWR-017    | The software shall continue operation in a degraded mode when non-critical sensor faults are detected. |
 | REQ-PWR-018    | The software shall provide telemetry outputs reflecting the current operational mode. |
 | REQ-PWR-019    | The software shall provide telemetry outputs reflecting detected fault and health conditions. |
-| REQ-PWR-020    | The software shall provide telemetry outputs reflecting load control decisions. |
+| REQ-PWR-020    | The software shall provide telemetry outputs reflecting sensor measurements. |
 | REQ-PWR-021    | The software shall detect and respond to fault conditions affecting power availability. |
 | REQ-PWR-022    | The software shall prioritise system safety over performance when handling faults. |
 | REQ-PWR-023    | The software shall recover from transient fault conditions when input values return to acceptable ranges. |
