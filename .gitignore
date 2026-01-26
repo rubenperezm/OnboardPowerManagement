@@ -41,7 +41,7 @@
 *.dwo
 
 # build directories
-src/build/
+**/build/
 
 # vscode settings
 .vscode/
