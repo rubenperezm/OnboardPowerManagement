@@ -3,7 +3,7 @@
 ## Functional Requirements Verification Matrix
 | Requirement ID | Unit Tests | Integration Tests | Functional Tests | Analysis |
 |----------------|----|----|----|----|
-| REQ-PWR-001 | UT-PWR-001-A <br> UT-PWR-001-B | - | FT-PWR-001 | - |
+| REQ-PWR-001 | UT-PWR-001-A <br> UT-PWR-001-B | - | FT-PWR-001 | AN-PWR-001 |
 | REQ-PWR-002 | UT-PWR-002-A <br> UT-PWR-002-B | - | FT-PWR-002 | - |
 | REQ-PWR-003 | UT-PWR-003-A <br> UT-PWR-003-B <br> UT-PWR-003-C <br> UT-PWR-003-D | - | FT-PWR-002 | - |
 | REQ-PWR-004 | - | IT-PWR-004 | - | - |
@@ -34,16 +34,16 @@
 | NFR-PWR-001 | - | IT-PWR-501 | FT-PWR-501 | - |
 | NFR-PWR-002 | - | IT-PWR-502 | - | - |
 | NFR-PWR-003 | - | - | FT-PWR-503 | - |
-| NFR-PWR-004 | UT-PWR-001-B <br> UT-PWR-003-C <br> UT-PWR-003-D <br> UT-PWR-016-A <br> UT-PWR-024-A | - | - | - |
+| NFR-PWR-004 | UT-PWR-001-B <br> UT-PWR-003-C <br> UT-PWR-003-D <br> UT-PWR-016-A <br> UT-PWR-024-A | - | - | AN-PWR-001 |
 | NFR-PWR-005 | - | - | FT-PWR-016 <br> FT-PWR-017 | - |
 | NFR-PWR-006 | - | IT-PWR-506 | - | - |
-| NFR-PWR-007 | - | - | - | TBD |
+| NFR-PWR-007 | - | - | - | AN-PWR-507 |
 | NFR-PWR-008 | UT-PWR-003-A <br> UT-PWR-003-B <br> UT-PWR-011-B <br> UT-PWR-023-B | - | - | - |
-| NFR-PWR-009 | - | - | - | TBD |
+| NFR-PWR-009 | - | - | - | AN-PWR-509 |
 | NFR-PWR-010 | - | IT-PWR-018 <br> IT-PWR-019 <br> IT-PWR-020 | - | - |
-| NFR-PWR-011 | - | - | - | TBD |
-| NFR-PWR-012 | - | IT-PWR-512 | - | TBD |
-| NFR-PWR-013 | - | - | - | TBD |
-| NFR-PWR-014 | - | - | - | TBD |
-| NFR-PWR-015 | - | - | - | TBD |
-| NFR-PWR-016 | - | - | - | TBD |
+| NFR-PWR-011 | - | - | - | AN-PWR-511 |
+| NFR-PWR-012 | - | IT-PWR-512 | - | AN-PWR-512 |
+| NFR-PWR-013 | - | - | - | AN-PWR-513 |
+| NFR-PWR-014 | - | - | - | AN-PWR-514 |
+| NFR-PWR-015 | - | - | - | AN-PWR-515 |
+| NFR-PWR-016 | - | - | - | AN-PWR-516 |
