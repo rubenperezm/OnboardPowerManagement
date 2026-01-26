@@ -1,5 +1,4 @@
 #include <stdexcept>
-#include <iostream>
 #include <chrono>
 
 #include "FaultInjector.hpp"
