@@ -70,36 +70,100 @@ class PowerManager {
         bool getShutdown() const;
 
     private:
-        // Config 
+        /**
+         * @brief Configuration parameters
+         * 
+         */
         const Config& config;
 
-        // Cached inputs
+        /**
+         * @brief Latest processed measurements
+         */
         std::optional<BatteryMeasurements> m_lastMeasurements;
+
+        /**
+         * @brief Latest processed sensor health status
+         */
         std::optional<SensorHealthStatus>  m_lastHealthStatus;
+
+        /**
+         * @brief Timestamp when overcurrent condition started
+         */
         std::optional<u_int64_t> m_overcurrentStartTimestamp;
 
-        // Internal state
+        /**
+         * @brief Shutdown flag
+         */
         bool m_isShutdown;
+
+        /**
+         * @brief Current operational mode
+         */
         PowerMode m_currentMode;
 
-        // Internal Flags
+        /**
+         * @brief Voltage overload flag
+         */
         bool m_voltageOverload;
+
+        /**
+         * @brief Voltage underload flag
+         */
         bool m_voltageUnderload;
+
+        /**
+         * @brief Current overload flag
+         */
         bool m_currentOverload;
+
+        /**
+         * @brief Sustained current overload flag
+         */
         bool m_sustainedOvercurrent;
+
+        /**
+         * @brief Temperature overlimit flag
+         */
         bool m_overtemperature;
+
+        /**
+         * @brief Temperature underlimit flag
+         */
         bool m_undertemperature;
 
-        // Auxiliary methods
-        void setVoltageFlags();
-        void setCurrentFlags();
-        void setTemperatureFlags();
-        bool checkOffConditions() const;
-        bool checkSafeConditions() const;
-
-        // Latest output
+        /**
+         * @brief Latest power command
+         */
         std::optional<PowerCommand> m_lastCommand;
 
-        // Friend struct for testing purposes
+        /**
+         * @brief Set voltage-related flags based on latest measurements
+         * 
+         */
+        void setVoltageFlags();
+
+        /**
+         * @brief Set current-related flags based on latest measurements
+         */
+        void setCurrentFlags();
+
+        /**
+         * @brief Set temperature-related flags based on latest measurements
+         */
+        void setTemperatureFlags();
+
+        /**
+         * @brief Check if conditions to transition to OFF mode are met
+         */
+        bool checkOffConditions() const;
+
+        /**
+         * @brief Check if conditions to transition to SAFE mode are met
+         */
+        bool checkSafeConditions() const;
+
+        /**
+         * @brief Test adapter to access private members for testing purposes
+         */
         friend struct PowerManagerTestAdapter;
 };
