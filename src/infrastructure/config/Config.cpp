@@ -3,6 +3,7 @@
 #include <sstream>
 
 #include "Config.hpp"
+#include "Log.hpp"
 
 // To be called in main
 Config::Config(const std::string& filename) {
@@ -69,9 +70,7 @@ void Config::load(const std::string& filename) {
                 } else if (key == "TELEMETRY_UPDATE_INTERVAL") {
                     telemetryUpdateInterval_ = val;
                 } else {
-                    #ifndef NDEBUG
-                        std::cerr << "[WARNING] Unknown config key: " << key << std::endl;
-                    #endif
+                    LOG_WARN("Unknown config key: " + key);
                 }
             }
         }
