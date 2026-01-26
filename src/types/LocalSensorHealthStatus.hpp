@@ -19,5 +19,9 @@ struct LocalSensorHealthStatus {
     uint8_t sourceId;         // Unique sensor ID
     SensorState status;       // Current health state
     uint64_t timestamp_us;    // Timestamp in microseconds
+
+    bool operator==(const LocalSensorHealthStatus& other){
+        return sourceId == other.sourceId && status == other.status;
+    }
 };
 
