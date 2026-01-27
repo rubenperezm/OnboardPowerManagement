@@ -42,23 +42,23 @@ Unit Test (UT)
 The following steps are applied sequentially:
 
 1. Initialize the PowerManager component
-2. Request transition to `NORMAL` mode
+2. Inject battery measurements to transition to `NORMAL` mode
 3. Query the current operational mode
-4. Request transition to `OFF` mode via internal trigger
+4. Send shutdown command to the PowerManager to transition to `OFF` mode
 5. Query the current operational mode
-6. Request transition back to `NORMAL` mode via internal trigger
+6. Send restart command to the PowerManager to transition to `NORMAL` mode
 7. Query the current operational mode
-8. Request transition to `SAFE` mode via internal trigger
+8. Inject battery measurements to transition to `SAFE` mode
 9. Query the current operational mode
-10. Request transition back to `NORMAL` mode via internal trigger
+10. Inject battery measurements to transition to `NORMAL` mode
 11. Query the current operational mode
-12. Request transition back to `SAFE` mode via valid internal command
+12. Inject battery measurements to transition to `SAFE` mode
 13. Query the current operational mode
-14. Request transition to `SAFE` mode via internal trigger
+14. Inject battery measurements to transition to `SAFE` mode
 15. Query the current operational mode
-16. Request transition to `OFF` mode via valid internal command
+16. Inject sensor health status with failed sensors to transition to `OFF` mode
 17. Query the current operational mode
-18. Request transition to `OFF` mode via invalid internal command
+18. Send shutdown command to transition to `OFF` mode
 19. Query the current operational mode
 ---
 

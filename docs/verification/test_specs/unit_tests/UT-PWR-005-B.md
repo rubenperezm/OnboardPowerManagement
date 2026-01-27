@@ -42,9 +42,9 @@ Unit Test (UT)
 The following steps are applied sequentially:
 
 1. Initialize the PowerManager component
-4. Request transition to `OFF` mode via internal trigger
+4. Send shutdown command transition to `OFF` mode
 5. Query the current operational mode
-6. Request transition back to `SAFE` mode via internal trigger
+6. Send restart command transition back to `SAFE`
 7. Query the current operational mode
 ---
 
