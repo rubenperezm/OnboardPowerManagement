@@ -43,7 +43,7 @@ The following steps are applied sequentially:
 1. Initialize the PowerManager component
 2. Query the current operational mode
 3. Inject a battery temperature value exceeding the maximum allowable temperature threshold
-5. Query the current operational mode
+4. Query the current operational mode
 
 ## 7. Expected Results
 

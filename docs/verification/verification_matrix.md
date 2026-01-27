@@ -26,7 +26,7 @@
 | REQ-PWR-021 | - | - | FT-PWR-021 | - |
 | REQ-PWR-022 | UT-PWR-022-A | - | FT-PWR-022 | - |
 | REQ-PWR-023 | UT-PWR-003-A <br> UT-PWR-003-B <br> UT-PWR-011-B <br> UT-PWR-014-B | - | FT-PWR-002 <br> FT-PWR-011 <br> FT-PWR-014 | - |
-| REQ-PWR-024 | UT-PWR-024-A | - | - | - |
+| REQ-PWR-024 | UT-PWR-022-A | - | - | - |
 
 ## Non-Functional Requirements Verification Matrix
 | Requirement ID | Unit Tests | Integration Tests | Functional Tests | Analysis |
