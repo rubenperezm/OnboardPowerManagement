@@ -53,5 +53,6 @@ add_subdirectory(src)
 
 if (BUILD_TESTS)
     add_subdirectory(tests/adapters)
+    add_subdirectory(tests/helpers)
     add_subdirectory(tests/unit_tests)
 endif()
