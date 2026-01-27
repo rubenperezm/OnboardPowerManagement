@@ -18,7 +18,7 @@
 | REQ-PWR-013 | UT-PWR-013-A <br> UT-PWR-013-B | - | - | - |
 | REQ-PWR-014 | UT-PWR-014-A <br> UT-PWR-014-B | - | FT-PWR-014 | - |
 | REQ-PWR-015 | - | IT-PWR-015 | - | - |
-| REQ-PWR-016 | UT-PWR-016-A | FT-PWR-016 | - | - |
+| REQ-PWR-016 | UT-PWR-016-A | - | FT-PWR-016 | - |
 | REQ-PWR-017 | - | - | FT-PWR-017 | - |
 | REQ-PWR-018 | - | IT-PWR-018 | FT-PWR-018 | - |
 | REQ-PWR-019 | - | IT-PWR-019 | FT-PWR-019 | - |
