@@ -2,10 +2,10 @@
 
 #include <optional>
 
-#include "BatteryMeasurements.hpp"
-#include "SensorHealthStatus.hpp"
-#include "PowerCommand.hpp"
-#include "LoadStatus.hpp"
+#include "BatteryMeasurements.h"
+#include "SensorHealthStatus.h"
+#include "PowerCommand.h"
+#include "LoadStatus.h"
 #include "Config.hpp"
 
 /**
