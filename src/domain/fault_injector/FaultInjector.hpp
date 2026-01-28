@@ -3,7 +3,7 @@
 #include <optional>
 #include <unordered_map>
 
-#include "LocalSensorHealthStatus.hpp"
+#include "LocalSensorHealthStatus.h"
 
 /**
  * @brief FaultInjector
