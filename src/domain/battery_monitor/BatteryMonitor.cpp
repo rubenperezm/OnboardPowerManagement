@@ -4,22 +4,31 @@
 
 #include "Config.hpp"
 #include "BatteryMonitor.hpp"
-#include "BatteryMeasurements.hpp"
-#include "LocalSensorHealthStatus.hpp"
 
 void BatteryMonitor::acquireMeasurements(){
-    BatteryMeasurements measurements = m_lastMeasurements.value_or(
-        BatteryMeasurements{config.getInitialVoltage(), config.getInitialCurrent(), config.getInitialTemperature(), 0}
-    );
+    BatteryMeasurements measurements;
 
-    generateRandomMeasurement(config.getGenerationMinVoltage(), config.getGenerationMaxVoltage(), measurements.voltage);
+    if (m_lastMeasurements.has_value()){
+        measurements = m_lastMeasurements.value();
+    } else {
+        BatteryMeasurements initialMeasurements;
 
-    generateRandomMeasurement(config.getGenerationMinCurrent(), config.getGenerationMaxCurrent(), measurements.current);
+        initialMeasurements.voltage(config.getInitialVoltage());
+        initialMeasurements.current(config.getInitialCurrent());
+        initialMeasurements.temperature(config.getInitialTemperature());
+        initialMeasurements.timestamp_us(0);
 
-    generateRandomMeasurement(config.getGenerationMinTemperature(), config.getGenerationMaxTemperature(), measurements.temperature);
-    measurements.timestamp_us = std::chrono::duration_cast<std::chrono::microseconds>(
+        measurements = initialMeasurements;
+    }
+
+    generateRandomMeasurement(config.getGenerationMinVoltage(), config.getGenerationMaxVoltage(), measurements.voltage());
+
+    generateRandomMeasurement(config.getGenerationMinCurrent(), config.getGenerationMaxCurrent(), measurements.current());
+
+    generateRandomMeasurement(config.getGenerationMinTemperature(), config.getGenerationMaxTemperature(), measurements.temperature());
+    measurements.timestamp_us(std::chrono::duration_cast<std::chrono::microseconds>(
         std::chrono::steady_clock::now().time_since_epoch()
-    ).count();
+    ).count());
 
     m_lastMeasurements = measurements;
 }
@@ -46,11 +55,11 @@ LocalSensorHealthStatus BatteryMonitor::getSensorHealthStatus() {
     }
 
     LocalSensorHealthStatus healthStatus;
-    healthStatus.sourceId = SENSOR_ID;
-    healthStatus.status = state;
-    healthStatus.timestamp_us = std::chrono::duration_cast<std::chrono::microseconds>(
+    healthStatus.sourceId(SENSOR_ID);
+    healthStatus.status(state);
+    healthStatus.timestamp_us(std::chrono::duration_cast<std::chrono::microseconds>(
         std::chrono::steady_clock::now().time_since_epoch()
-    ).count();
+    ).count());
 
     return healthStatus;
 }
