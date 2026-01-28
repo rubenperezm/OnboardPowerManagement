@@ -4,11 +4,11 @@
 #include <string>
 #include <ostream>
 
-#include "BatteryMeasurements.hpp"
-#include "SensorHealthStatus.hpp"
-#include "LocalSensorHealthStatus.hpp"
-#include "LoadStatus.hpp"
-#include "PowerCommand.hpp"
+#include "BatteryMeasurements.h"
+#include "SensorHealthStatus.h"
+#include "LocalSensorHealthStatus.h"
+#include "LoadStatus.h"
+#include "PowerCommand.h"
 
 /**
  * @brief TelemetryLogger

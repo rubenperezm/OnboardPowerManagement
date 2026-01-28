@@ -8,7 +8,11 @@ add_library(telemetry_logger
 target_include_directories(telemetry_logger
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/src/types
+)
+
+target_link_libraries(telemetry_logger
+    PRIVATE
+        dds_types
 )
 
 target_compile_features(telemetry_logger

@@ -18,22 +18,22 @@ void PowerManager::processBatteryMeasurements(const BatteryMeasurements& measure
 
 void PowerManager::setVoltageFlags(){
     if (m_voltageOverload || m_voltageUnderload){
-        m_voltageOverload = m_lastMeasurements.value().voltage > (1-config.getOvervoltageRecoveryMargin())*config.getMaxVoltage();
-        m_voltageUnderload = m_lastMeasurements.value().voltage < (1+config.getUndervoltageRecoveryMargin())*config.getMinVoltage();
+        m_voltageOverload = m_lastMeasurements.value().voltage() > (1-config.getOvervoltageRecoveryMargin())*config.getMaxVoltage();
+        m_voltageUnderload = m_lastMeasurements.value().voltage() < (1+config.getUndervoltageRecoveryMargin())*config.getMinVoltage();
     } else {
-        m_voltageOverload = m_lastMeasurements.value().voltage > config.getMaxVoltage();
-        m_voltageUnderload = m_lastMeasurements.value().voltage < config.getMinVoltage();
+        m_voltageOverload = m_lastMeasurements.value().voltage() > config.getMaxVoltage();
+        m_voltageUnderload = m_lastMeasurements.value().voltage() < config.getMinVoltage();
     }
 }
 
 void PowerManager::setCurrentFlags(){
-    m_currentOverload = m_lastMeasurements.value().current > config.getMaxCurrent();
+    m_currentOverload = m_lastMeasurements.value().current() > config.getMaxCurrent();
     
     if (m_currentOverload){
         if (m_overcurrentStartTimestamp.has_value()){
-            m_sustainedOvercurrent = (m_lastMeasurements.value().timestamp_us - m_overcurrentStartTimestamp.value() > config.getOvercurrentDurationThreshold() * 1000000);
+            m_sustainedOvercurrent = (m_lastMeasurements.value().timestamp_us() - m_overcurrentStartTimestamp.value() > config.getOvercurrentDurationThreshold() * 1000000);
         } else {
-            m_overcurrentStartTimestamp = m_lastMeasurements.value().timestamp_us;
+            m_overcurrentStartTimestamp = m_lastMeasurements.value().timestamp_us();
         }
     } else {
         m_sustainedOvercurrent = false;
@@ -42,8 +42,8 @@ void PowerManager::setCurrentFlags(){
 }
 
 void PowerManager::setTemperatureFlags(){
-    m_overtemperature = m_lastMeasurements.value().temperature > config.getMaxTemperature();
-    m_undertemperature = m_lastMeasurements.value().temperature < config.getMinTemperature();
+    m_overtemperature = m_lastMeasurements.value().temperature() > config.getMaxTemperature();
+    m_undertemperature = m_lastMeasurements.value().temperature() < config.getMinTemperature();
 }
 
 void PowerManager::processSensorHealthStatus(const SensorHealthStatus& healthStatus){
@@ -60,22 +60,22 @@ void PowerManager::evaluate(){
     }
 
     PowerCommand command;
-    command.mode = m_currentMode;
-    command.emergencyShutdown = m_isShutdown;
-    command.timestamp_us = std::chrono::duration_cast<std::chrono::microseconds>(
+    command.mode(m_currentMode);
+    command.emergencyShutdown(m_isShutdown);
+    command.timestamp_us(std::chrono::duration_cast<std::chrono::microseconds>(
         std::chrono::steady_clock::now().time_since_epoch()
-    ).count();
+    ).count());
 
     m_lastCommand = command;
  
 }
 
 bool PowerManager::checkOffConditions() const {
-    return m_isShutdown || (m_lastHealthStatus.has_value() && m_lastHealthStatus.value().anyFailed);
+    return m_isShutdown || (m_lastHealthStatus.has_value() && m_lastHealthStatus.value().anyFailed());
 }
 
 bool PowerManager::checkSafeConditions() const {
-    return (m_lastHealthStatus.has_value() && m_lastHealthStatus.value().anyDegraded) || m_voltageOverload ||
+    return (m_lastHealthStatus.has_value() && m_lastHealthStatus.value().anyDegraded()) || m_voltageOverload ||
         m_voltageUnderload || m_sustainedOvercurrent || m_undertemperature || m_overtemperature;
 }
 
