@@ -1,0 +1,6 @@
+struct BatteryMeasurements {
+    float voltage;
+    float current;
+    float temperature;
+    unsigned long long timestamp_us;
+};
