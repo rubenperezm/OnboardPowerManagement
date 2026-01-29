@@ -18,10 +18,10 @@ class BatteryMeasurementsBuilder {
 
         BatteryMeasurementsBuilder& withTimestamp(uint64_t ts);
 
-        BatteryMeasurements build() const;
+        core::BatteryMeasurements build() const;
 
     private:
         const Config& cfg_;
-        BatteryMeasurements measurements_;
+        core::BatteryMeasurements measurements_;
 };
 

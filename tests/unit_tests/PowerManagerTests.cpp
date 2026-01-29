@@ -7,7 +7,7 @@
 #include "BatteryMeasurementsBuilder.hpp"
 #include "SensorHealthStatusBuilder.hpp"
 
-
+using namespace core;
 
 /**
  * Fixtures 

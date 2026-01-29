@@ -26,6 +26,6 @@ SensorHealthStatusBuilder& SensorHealthStatusBuilder::withTimestamp(uint64_t ts)
     return *this;
 }
 
-SensorHealthStatus SensorHealthStatusBuilder::build() const {
+core::SensorHealthStatus SensorHealthStatusBuilder::build() const {
     return status_;
 }

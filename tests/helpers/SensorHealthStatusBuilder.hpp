@@ -14,9 +14,9 @@ class SensorHealthStatusBuilder {
 
         SensorHealthStatusBuilder& withTimestamp(uint64_t ts);
 
-        SensorHealthStatus build() const;
+        core::SensorHealthStatus build() const;
 
     private:
-        SensorHealthStatus status_;
+        core::SensorHealthStatus status_;
 };
 
