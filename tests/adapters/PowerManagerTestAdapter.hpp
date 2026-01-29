@@ -1,9 +1,10 @@
 #pragma once
+
 #include "PowerManager.hpp"
 #include "PowerCommand.hpp"
 
 struct PowerManagerTestAdapter {
-    static void forceMode(PowerManager& pm, const PowerMode mode);
+    static void forceMode(PowerManager& pm, const core::PowerMode mode);
 
     static bool getVoltageOverloadFlag(const PowerManager& pm);
 

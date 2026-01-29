@@ -5,6 +5,8 @@
 
 #include "LocalSensorHealthStatus.hpp"
 
+using namespace core;
+
 /**
  * @brief FaultInjector
  *

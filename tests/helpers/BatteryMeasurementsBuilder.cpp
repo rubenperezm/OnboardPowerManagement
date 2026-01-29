@@ -32,6 +32,6 @@ BatteryMeasurementsBuilder& BatteryMeasurementsBuilder::withTimestamp(uint64_t t
     return *this;
 }
 
-BatteryMeasurements BatteryMeasurementsBuilder::build() const {
+core::BatteryMeasurements BatteryMeasurementsBuilder::build() const {
     return measurements_;
 }

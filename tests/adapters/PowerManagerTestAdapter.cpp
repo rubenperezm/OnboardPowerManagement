@@ -1,6 +1,6 @@
 #include "PowerManagerTestAdapter.hpp"
 
-void PowerManagerTestAdapter::forceMode(PowerManager& pm, const PowerMode mode){
+void PowerManagerTestAdapter::forceMode(PowerManager& pm, const core::PowerMode mode){
     pm.m_currentMode = mode;
 }
 

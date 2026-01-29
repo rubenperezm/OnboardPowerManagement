@@ -6,6 +6,8 @@
 #include "LocalSensorHealthStatus.hpp"
 #include "SensorHealthStatus.hpp"
 
+using namespace core;
+
 /**
  * @brief SensorHealthManager
  *
