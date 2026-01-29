@@ -3,8 +3,8 @@
 #include <cstdint>
 #include <unordered_map>
 
-#include "LocalSensorHealthStatus.h"
-#include "SensorHealthStatus.h"
+#include "LocalSensorHealthStatus.hpp"
+#include "SensorHealthStatus.hpp"
 
 /**
  * @brief SensorHealthManager

@@ -8,13 +8,12 @@ add_library(battery_monitor
 target_include_directories(battery_monitor
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
+        ${PROJECT_SOURCE_DIR}/src/types
 )
 
 target_link_libraries(battery_monitor
     PUBLIC
         config
-    PRIVATE
-        dds_types
 )
 
 target_compile_features(battery_monitor

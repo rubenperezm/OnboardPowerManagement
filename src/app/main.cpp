@@ -12,18 +12,18 @@ int main() {
     batteryMonitor.acquireMeasurements();
     auto measurements = batteryMonitor.getMeasurements();
     if (measurements) {
-        std::cout << "Voltage: " << measurements->voltage() << " V\n";
-        std::cout << "Current: " << measurements->current() << " A\n";
-        std::cout << "Temperature: " << measurements->temperature() << " °C\n";
-        std::cout << "Timestamp: " << measurements->timestamp_us() << " us\n";
+        std::cout << "Voltage: " << measurements->voltage << " V\n";
+        std::cout << "Current: " << measurements->current << " A\n";
+        std::cout << "Temperature: " << measurements->temperature << " °C\n";
+        std::cout << "Timestamp: " << measurements->timestamp_us << " us\n";
     } else {
         std::cout << "No measurements available.\n";
     }
 
     auto healthStatus = batteryMonitor.getSensorHealthStatus();
-    std::cout << "Sensor ID: " << static_cast<int>(healthStatus.sourceId()) << "\n";
-    std::cout << "Sensor Status: " << static_cast<int>(healthStatus.status()) << "\n";
-    std::cout << "Health Timestamp: " << healthStatus.timestamp_us() << " us\n";
+    std::cout << "Sensor ID: " << static_cast<int>(healthStatus.sourceId) << "\n";
+    std::cout << "Sensor Status: " << static_cast<int>(healthStatus.status) << "\n";
+    std::cout << "Health Timestamp: " << healthStatus.timestamp_us << " us\n";
 
     std::cout << "-------------------------\n";
     }

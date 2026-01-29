@@ -8,11 +8,7 @@ add_library(subsystem_controller
 target_include_directories(subsystem_controller
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
-target_link_libraries(subsystem_controller
-    PRIVATE
-        dds_types
+        ${PROJECT_SOURCE_DIR}/src/types
 )
 
 target_compile_features(subsystem_controller

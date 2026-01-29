@@ -1,6 +1,0 @@
-struct LoadStatus {
-    boolean payloadActive;
-    boolean commsActive;
-    boolean thermalActive;
-    unsigned long long timestamp_us;
-};

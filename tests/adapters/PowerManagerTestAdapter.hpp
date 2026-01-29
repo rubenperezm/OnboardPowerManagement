@@ -1,6 +1,6 @@
 #pragma once
 #include "PowerManager.hpp"
-#include "PowerCommand.h"
+#include "PowerCommand.hpp"
 
 struct PowerManagerTestAdapter {
     static void forceMode(PowerManager& pm, const PowerMode mode);
