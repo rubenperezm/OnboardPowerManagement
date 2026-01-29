@@ -8,6 +8,8 @@
 #include "LoadStatus.hpp"
 #include "Config.hpp"
 
+using namespace core;
+
 /**
  * @brief PowerManager
  *

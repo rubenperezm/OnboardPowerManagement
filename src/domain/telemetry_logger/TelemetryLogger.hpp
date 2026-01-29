@@ -10,6 +10,8 @@
 #include "LoadStatus.hpp"
 #include "PowerCommand.hpp"
 
+using namespace core;
+
 /**
  * @brief TelemetryLogger
  *

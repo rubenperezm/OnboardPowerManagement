@@ -6,6 +6,8 @@
 #include "BatteryMeasurements.hpp"
 #include "SensorHealthStatus.hpp"
 
+using namespace core;
+
 /**
  * @brief BatteryMonitor
  *
