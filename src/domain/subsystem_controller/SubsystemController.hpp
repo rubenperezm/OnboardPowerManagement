@@ -1,7 +1,7 @@
 #pragma once
 
-#include "LoadStatus.h"
-#include "PowerCommand.h"
+#include "LoadStatus.hpp"
+#include "PowerCommand.hpp"
 
 /**
  * @brief SubsystemController

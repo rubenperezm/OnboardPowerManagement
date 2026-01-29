@@ -2,7 +2,7 @@
 #include <chrono>
 
 #include "FaultInjector.hpp"
-#include "LocalSensorHealthStatus.h"
+#include "LocalSensorHealthStatus.hpp"
 #include "Log.hpp"
 
 FaultInjector::FaultInjector() : m_activeFaults() {}
@@ -37,11 +37,11 @@ LocalSensorHealthStatus FaultInjector::getHealthStatus(const uint8_t source) con
     if (it != m_activeFaults.end()){
         LocalSensorHealthStatus healthStatus;
 
-        healthStatus.sourceId(it->first + 128);
-        healthStatus.status(it->second);
-        healthStatus.timestamp_us(std::chrono::duration_cast<std::chrono::microseconds>(
+        healthStatus.sourceId = it->first + 128;
+        healthStatus.status = it->second;
+        healthStatus.timestamp_us = std::chrono::duration_cast<std::chrono::microseconds>(
             std::chrono::steady_clock::now().time_since_epoch()
-        ).count());
+        ).count();
 
         return healthStatus;
 

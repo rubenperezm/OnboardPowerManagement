@@ -1,5 +1,0 @@
-struct SensorHealthStatus {
-    boolean anyDegraded;
-    boolean anyFailed;
-    unsigned long long timestamp_us;
-};

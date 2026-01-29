@@ -3,8 +3,8 @@
 #include <optional>
 #include <random>
 
-#include "BatteryMeasurements.h"
-#include "LocalSensorHealthStatus.h"
+#include "BatteryMeasurements.hpp"
+#include "SensorHealthStatus.hpp"
 
 /**
  * @brief BatteryMonitor

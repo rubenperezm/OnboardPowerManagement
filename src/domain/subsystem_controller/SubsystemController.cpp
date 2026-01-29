@@ -4,25 +4,20 @@
 
 #include "SubsystemController.hpp"
 
-SubsystemController::SubsystemController() : m_loadStatus{} {
-    m_loadStatus.commsActive(true);
-    m_loadStatus.payloadActive(true);
-    m_loadStatus.thermalActive(true);
-    m_loadStatus.timestamp_us(0);
-}
+SubsystemController::SubsystemController() : m_loadStatus{true, true, true, 0} {}
 
 void SubsystemController::updateLoadStatus(const PowerCommand& command){
-    if (command.mode() == PowerMode::NORMAL){
+    if (command.mode == PowerMode::NORMAL){
         setNormal();
-    } else if (command.mode() == PowerMode::SAFE){
+    } else if (command.mode == PowerMode::SAFE){
         setSafe();
     } else {
-        setOff(command.emergencyShutdown());
+        setOff(command.emergencyShutdown);
     }
 
-    m_loadStatus.timestamp_us(std::chrono::duration_cast<std::chrono::microseconds>(
+    m_loadStatus.timestamp_us = std::chrono::duration_cast<std::chrono::microseconds>(
         std::chrono::steady_clock::now().time_since_epoch()
-    ).count());
+    ).count();
 }
 
 LoadStatus SubsystemController::getLoadStatus() const{
@@ -30,15 +25,15 @@ LoadStatus SubsystemController::getLoadStatus() const{
 }
 
 void SubsystemController::setNormal(){
-    m_loadStatus.payloadActive(true);
-    m_loadStatus.commsActive(true);
-    m_loadStatus.thermalActive(true);
+    m_loadStatus.payloadActive = true;
+    m_loadStatus.commsActive = true;
+    m_loadStatus.thermalActive = true;
 }
 
 void SubsystemController::setSafe(){
-    m_loadStatus.payloadActive(false);
-    m_loadStatus.commsActive(true);
-    m_loadStatus.thermalActive(true);
+    m_loadStatus.payloadActive = false;
+    m_loadStatus.commsActive = true;
+    m_loadStatus.thermalActive = true;
 }
 
 void SubsystemController::setOff(const bool emergencyShutdown){
@@ -46,9 +41,9 @@ void SubsystemController::setOff(const bool emergencyShutdown){
         wait_shutdown();
     }
 
-    m_loadStatus.payloadActive(false);
-    m_loadStatus.commsActive(false);
-    m_loadStatus.thermalActive(false);
+    m_loadStatus.payloadActive = false;
+    m_loadStatus.commsActive = false;
+    m_loadStatus.thermalActive = false;
 }
 
 void SubsystemController::wait_shutdown() const{
