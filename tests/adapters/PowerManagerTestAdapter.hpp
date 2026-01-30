@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PowerManager.hpp"
-#include "PowerCommand.hpp"
+#include "types/PowerCommand.hpp"
 
 struct PowerManagerTestAdapter {
     static void forceMode(PowerManager& pm, const core::PowerMode mode);

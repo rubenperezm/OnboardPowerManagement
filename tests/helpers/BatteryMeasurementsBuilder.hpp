@@ -4,7 +4,7 @@
 #include <optional>
 
 #include "Config.hpp"
-#include "BatteryMeasurements.hpp"
+#include "types/BatteryMeasurements.hpp"
 
 class BatteryMeasurementsBuilder {
     public:

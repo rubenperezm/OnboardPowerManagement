@@ -8,7 +8,7 @@ add_library(power_manager
 target_include_directories(power_manager
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/src/types
+        ${PROJECT_SOURCE_DIR}/src/include
 )
 
 target_link_libraries(power_manager

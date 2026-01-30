@@ -2,7 +2,6 @@
 #include <chrono>
 
 #include "FaultInjector.hpp"
-#include "LocalSensorHealthStatus.hpp"
 #include "Log.hpp"
 
 FaultInjector::FaultInjector() : m_activeFaults() {}

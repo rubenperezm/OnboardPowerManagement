@@ -1,7 +1,7 @@
 #pragma once
 
-#include "LoadStatus.hpp"
-#include "PowerCommand.hpp"
+#include "types/LoadStatus.hpp"
+#include "types/PowerCommand.hpp"
 
 using namespace core;
 /**

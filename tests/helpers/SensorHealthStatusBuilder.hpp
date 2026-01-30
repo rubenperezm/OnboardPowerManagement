@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "SensorHealthStatus.hpp"
+#include "types/SensorHealthStatus.hpp"
 
 class SensorHealthStatusBuilder {
     public:

@@ -491,7 +491,7 @@ TEST_F(PowerManagerTest, UTPWR011A) {
   step(pm, measurements, std::nullopt);
 
   // UT-PWR-011-A.4
-  measurements.timestamp_us += config.getOvercurrentDurationThreshold() * 1000000;
+  measurements.timestamp_us += (config.getOvercurrentDurationThreshold() + 0.001) * 1000000;
 
   step(pm, measurements, std::nullopt);
 

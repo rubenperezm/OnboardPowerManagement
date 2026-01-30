@@ -4,11 +4,11 @@
 #include <string>
 #include <ostream>
 
-#include "BatteryMeasurements.hpp"
-#include "SensorHealthStatus.hpp"
-#include "LocalSensorHealthStatus.hpp"
-#include "LoadStatus.hpp"
-#include "PowerCommand.hpp"
+#include "types/BatteryMeasurements.hpp"
+#include "types/SensorHealthStatus.hpp"
+#include "types/LocalSensorHealthStatus.hpp"
+#include "types/LoadStatus.hpp"
+#include "types/PowerCommand.hpp"
 
 using namespace core;
 

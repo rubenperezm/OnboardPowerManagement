@@ -3,8 +3,8 @@
 #include <optional>
 #include <random>
 
-#include "BatteryMeasurements.hpp"
-#include "SensorHealthStatus.hpp"
+#include "types/BatteryMeasurements.hpp"
+#include "types/SensorHealthStatus.hpp"
 
 using namespace core;
 

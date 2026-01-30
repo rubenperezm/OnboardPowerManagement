@@ -6,7 +6,7 @@ add_library(test_helpers
 target_include_directories(test_helpers
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/src/types
+        ${PROJECT_SOURCE_DIR}/src/include
 )
 
 target_link_libraries(test_helpers

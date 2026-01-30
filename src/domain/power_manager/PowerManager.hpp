@@ -2,10 +2,10 @@
 
 #include <optional>
 
-#include "BatteryMeasurements.hpp"
-#include "SensorHealthStatus.hpp"
-#include "PowerCommand.hpp"
-#include "LoadStatus.hpp"
+#include "types/BatteryMeasurements.hpp"
+#include "types/SensorHealthStatus.hpp"
+#include "types/PowerCommand.hpp"
+#include "types/LoadStatus.hpp"
 #include "Config.hpp"
 
 using namespace core;

@@ -3,8 +3,8 @@
 #include <cstdint>
 #include <unordered_map>
 
-#include "LocalSensorHealthStatus.hpp"
-#include "SensorHealthStatus.hpp"
+#include "types/LocalSensorHealthStatus.hpp"
+#include "types/SensorHealthStatus.hpp"
 
 using namespace core;
 

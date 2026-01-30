@@ -4,8 +4,6 @@
 
 #include "Config.hpp"
 #include "BatteryMonitor.hpp"
-#include "BatteryMeasurements.hpp"
-#include "LocalSensorHealthStatus.hpp"
 
 void BatteryMonitor::acquireMeasurements(){
     BatteryMeasurements measurements = m_lastMeasurements.value_or(
