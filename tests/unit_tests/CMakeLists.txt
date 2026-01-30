@@ -9,7 +9,7 @@ add_executable(unit_tests
 
 target_include_directories(unit_tests
     PRIVATE
-        ${PROJECT_SOURCE_DIR}/src/include
+        ${PROJECT_SOURCE_DIR}/onboard_power_management/include
 )
 
 target_link_libraries(unit_tests

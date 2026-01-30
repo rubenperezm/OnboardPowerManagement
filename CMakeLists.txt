@@ -49,7 +49,7 @@ endif()
 
 option(BUILD_TESTS "Build unit tests" OFF)
 
-add_subdirectory(src)
+add_subdirectory(onboard_power_management)
 
 if (BUILD_TESTS)
     add_subdirectory(tests/adapters)

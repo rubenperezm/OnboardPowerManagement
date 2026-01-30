@@ -8,7 +8,7 @@ add_library(fault_injector
 target_include_directories(fault_injector
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/src/include
+        ${PROJECT_SOURCE_DIR}/onboard_power_management/include
 )
 
 target_link_libraries(fault_injector

@@ -8,7 +8,7 @@ add_library(telemetry_logger
 target_include_directories(telemetry_logger
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/src/include
+        ${PROJECT_SOURCE_DIR}/onboard_power_management/include
 )
 
 target_compile_features(telemetry_logger

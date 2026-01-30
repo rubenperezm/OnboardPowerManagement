@@ -5,7 +5,7 @@ add_library(test_adapters
 target_include_directories(test_adapters
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${PROJECT_SOURCE_DIR}/src/include
+        ${PROJECT_SOURCE_DIR}/onboard_power_management/include
 )
 
 target_link_libraries(test_adapters

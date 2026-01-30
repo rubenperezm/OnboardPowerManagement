@@ -1,13 +1,13 @@
-add_subdirectory(app)
+add_subdirectory(apps)
 
 add_subdirectory(infrastructure/config)
 add_subdirectory(infrastructure/logging)
 
-add_subdirectory(domain/battery_monitor)
-add_subdirectory(domain/sensor_health_manager)
-add_subdirectory(domain/power_manager)
-add_subdirectory(domain/fault_injector)
-add_subdirectory(domain/telemetry_logger)
-add_subdirectory(domain/subsystem_controller)
+add_subdirectory(core/battery_monitor)
+add_subdirectory(core/sensor_health_manager)
+add_subdirectory(core/power_manager)
+add_subdirectory(core/fault_injector)
+add_subdirectory(core/telemetry_logger)
+add_subdirectory(core/subsystem_controller)
 
 add_subdirectory(dds)
