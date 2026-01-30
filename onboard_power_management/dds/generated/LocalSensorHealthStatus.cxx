@@ -35,24 +35,24 @@ using namespace eprosima::fastcdr::exception;
 #include <utility>
 
 
-LocalSensorHealthStatus::LocalSensorHealthStatus()
+dds::LocalSensorHealthStatus::LocalSensorHealthStatus()
 {
-    // m_sourceId com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6591f517
+    // m_sourceId com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4461c7e3
     m_sourceId = 0;
-    // m_status com.eprosima.idl.parser.typecode.EnumTypeCode@345965f2
-    m_status = ::NOMINAL;
-    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@429bd883
+    // m_status com.eprosima.idl.parser.typecode.EnumTypeCode@351d0846
+    m_status = dds::NOMINAL;
+    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@77e4c80f
     m_timestamp_us = 0;
 
 }
 
-LocalSensorHealthStatus::~LocalSensorHealthStatus()
+dds::LocalSensorHealthStatus::~LocalSensorHealthStatus()
 {
 
 
 }
 
-LocalSensorHealthStatus::LocalSensorHealthStatus(
+dds::LocalSensorHealthStatus::LocalSensorHealthStatus(
         const LocalSensorHealthStatus& x)
 {
     m_sourceId = x.m_sourceId;
@@ -60,7 +60,7 @@ LocalSensorHealthStatus::LocalSensorHealthStatus(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-LocalSensorHealthStatus::LocalSensorHealthStatus(
+dds::LocalSensorHealthStatus::LocalSensorHealthStatus(
         LocalSensorHealthStatus&& x)
 {
     m_sourceId = x.m_sourceId;
@@ -68,7 +68,7 @@ LocalSensorHealthStatus::LocalSensorHealthStatus(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-LocalSensorHealthStatus& LocalSensorHealthStatus::operator =(
+dds::LocalSensorHealthStatus& dds::LocalSensorHealthStatus::operator =(
         const LocalSensorHealthStatus& x)
 {
 
@@ -79,7 +79,7 @@ LocalSensorHealthStatus& LocalSensorHealthStatus::operator =(
     return *this;
 }
 
-LocalSensorHealthStatus& LocalSensorHealthStatus::operator =(
+dds::LocalSensorHealthStatus& dds::LocalSensorHealthStatus::operator =(
         LocalSensorHealthStatus&& x)
 {
 
@@ -90,20 +90,20 @@ LocalSensorHealthStatus& LocalSensorHealthStatus::operator =(
     return *this;
 }
 
-bool LocalSensorHealthStatus::operator ==(
+bool dds::LocalSensorHealthStatus::operator ==(
         const LocalSensorHealthStatus& x) const
 {
 
     return (m_sourceId == x.m_sourceId && m_status == x.m_status && m_timestamp_us == x.m_timestamp_us);
 }
 
-bool LocalSensorHealthStatus::operator !=(
+bool dds::LocalSensorHealthStatus::operator !=(
         const LocalSensorHealthStatus& x) const
 {
     return !(*this == x);
 }
 
-size_t LocalSensorHealthStatus::getMaxCdrSerializedSize(
+size_t dds::LocalSensorHealthStatus::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
@@ -122,8 +122,8 @@ size_t LocalSensorHealthStatus::getMaxCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-size_t LocalSensorHealthStatus::getCdrSerializedSize(
-        const LocalSensorHealthStatus& data,
+size_t dds::LocalSensorHealthStatus::getCdrSerializedSize(
+        const dds::LocalSensorHealthStatus& data,
         size_t current_alignment)
 {
     (void)data;
@@ -143,7 +143,7 @@ size_t LocalSensorHealthStatus::getCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-void LocalSensorHealthStatus::serialize(
+void dds::LocalSensorHealthStatus::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
@@ -153,7 +153,7 @@ void LocalSensorHealthStatus::serialize(
 
 }
 
-void LocalSensorHealthStatus::deserialize(
+void dds::LocalSensorHealthStatus::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
@@ -161,7 +161,7 @@ void LocalSensorHealthStatus::deserialize(
     {
         uint32_t enum_value = 0;
         dcdr >> enum_value;
-        m_status = (SensorState)enum_value;
+        m_status = (dds::SensorState)enum_value;
     }
 
     dcdr >> m_timestamp_us;
@@ -171,7 +171,7 @@ void LocalSensorHealthStatus::deserialize(
  * @brief This function sets a value in member sourceId
  * @param _sourceId New value for member sourceId
  */
-void LocalSensorHealthStatus::sourceId(
+void dds::LocalSensorHealthStatus::sourceId(
         uint8_t _sourceId)
 {
     m_sourceId = _sourceId;
@@ -181,7 +181,7 @@ void LocalSensorHealthStatus::sourceId(
  * @brief This function returns the value of member sourceId
  * @return Value of member sourceId
  */
-uint8_t LocalSensorHealthStatus::sourceId() const
+uint8_t dds::LocalSensorHealthStatus::sourceId() const
 {
     return m_sourceId;
 }
@@ -190,7 +190,7 @@ uint8_t LocalSensorHealthStatus::sourceId() const
  * @brief This function returns a reference to member sourceId
  * @return Reference to member sourceId
  */
-uint8_t& LocalSensorHealthStatus::sourceId()
+uint8_t& dds::LocalSensorHealthStatus::sourceId()
 {
     return m_sourceId;
 }
@@ -199,8 +199,8 @@ uint8_t& LocalSensorHealthStatus::sourceId()
  * @brief This function sets a value in member status
  * @param _status New value for member status
  */
-void LocalSensorHealthStatus::status(
-        SensorState _status)
+void dds::LocalSensorHealthStatus::status(
+        dds::SensorState _status)
 {
     m_status = _status;
 }
@@ -209,7 +209,7 @@ void LocalSensorHealthStatus::status(
  * @brief This function returns the value of member status
  * @return Value of member status
  */
-SensorState LocalSensorHealthStatus::status() const
+dds::SensorState dds::LocalSensorHealthStatus::status() const
 {
     return m_status;
 }
@@ -218,7 +218,7 @@ SensorState LocalSensorHealthStatus::status() const
  * @brief This function returns a reference to member status
  * @return Reference to member status
  */
-SensorState& LocalSensorHealthStatus::status()
+dds::SensorState& dds::LocalSensorHealthStatus::status()
 {
     return m_status;
 }
@@ -227,7 +227,7 @@ SensorState& LocalSensorHealthStatus::status()
  * @brief This function sets a value in member timestamp_us
  * @param _timestamp_us New value for member timestamp_us
  */
-void LocalSensorHealthStatus::timestamp_us(
+void dds::LocalSensorHealthStatus::timestamp_us(
         uint64_t _timestamp_us)
 {
     m_timestamp_us = _timestamp_us;
@@ -237,7 +237,7 @@ void LocalSensorHealthStatus::timestamp_us(
  * @brief This function returns the value of member timestamp_us
  * @return Value of member timestamp_us
  */
-uint64_t LocalSensorHealthStatus::timestamp_us() const
+uint64_t dds::LocalSensorHealthStatus::timestamp_us() const
 {
     return m_timestamp_us;
 }
@@ -246,13 +246,13 @@ uint64_t LocalSensorHealthStatus::timestamp_us() const
  * @brief This function returns a reference to member timestamp_us
  * @return Reference to member timestamp_us
  */
-uint64_t& LocalSensorHealthStatus::timestamp_us()
+uint64_t& dds::LocalSensorHealthStatus::timestamp_us()
 {
     return m_timestamp_us;
 }
 
 
-size_t LocalSensorHealthStatus::getKeyMaxCdrSerializedSize(
+size_t dds::LocalSensorHealthStatus::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
@@ -262,14 +262,15 @@ size_t LocalSensorHealthStatus::getKeyMaxCdrSerializedSize(
     return current_align;
 }
 
-bool LocalSensorHealthStatus::isKeyDefined()
+bool dds::LocalSensorHealthStatus::isKeyDefined()
 {
     return false;
 }
 
-void LocalSensorHealthStatus::serializeKey(
+void dds::LocalSensorHealthStatus::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
        
 }
+

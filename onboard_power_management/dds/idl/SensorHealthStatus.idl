@@ -1,5 +1,7 @@
-struct SensorHealthStatus {
-    boolean anyDegraded;
-    boolean anyFailed;
-    unsigned long long timestamp_us;
+module dds {
+    struct SensorHealthStatus {
+        boolean anyDegraded;
+        boolean anyFailed;
+        unsigned long long timestamp_us;
+    };
 };

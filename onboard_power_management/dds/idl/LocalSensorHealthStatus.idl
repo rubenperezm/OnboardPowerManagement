@@ -1,11 +1,13 @@
-enum SensorState {
-    NOMINAL,
-    DEGRADED,
-    FAILED
-};
+module dds {
+    enum SensorState {
+        NOMINAL,
+        DEGRADED,
+        FAILED
+    };
 
-struct LocalSensorHealthStatus {
-    octet sourceId;
-    SensorState status;
-    unsigned long long timestamp_us;
+    struct LocalSensorHealthStatus {
+        octet sourceId;
+        SensorState status;
+        unsigned long long timestamp_us;
+    };
 };

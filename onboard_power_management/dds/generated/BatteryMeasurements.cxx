@@ -34,27 +34,27 @@ using namespace eprosima::fastcdr::exception;
 
 #include <utility>
 
-BatteryMeasurements::BatteryMeasurements()
+dds::BatteryMeasurements::BatteryMeasurements()
 {
-    // m_voltage com.eprosima.idl.parser.typecode.PrimitiveTypeCode@75881071
+    // m_voltage com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78ac1102
     m_voltage = 0.0;
-    // m_current com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2a70a3d8
+    // m_current com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2de8284b
     m_current = 0.0;
-    // m_temperature com.eprosima.idl.parser.typecode.PrimitiveTypeCode@289d1c02
+    // m_temperature com.eprosima.idl.parser.typecode.PrimitiveTypeCode@396e2f39
     m_temperature = 0.0;
-    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@22eeefeb
+    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@a74868d
     m_timestamp_us = 0;
 
 }
 
-BatteryMeasurements::~BatteryMeasurements()
+dds::BatteryMeasurements::~BatteryMeasurements()
 {
 
 
 
 }
 
-BatteryMeasurements::BatteryMeasurements(
+dds::BatteryMeasurements::BatteryMeasurements(
         const BatteryMeasurements& x)
 {
     m_voltage = x.m_voltage;
@@ -63,7 +63,7 @@ BatteryMeasurements::BatteryMeasurements(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-BatteryMeasurements::BatteryMeasurements(
+dds::BatteryMeasurements::BatteryMeasurements(
         BatteryMeasurements&& x)
 {
     m_voltage = x.m_voltage;
@@ -72,7 +72,7 @@ BatteryMeasurements::BatteryMeasurements(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-BatteryMeasurements& BatteryMeasurements::operator =(
+dds::BatteryMeasurements& dds::BatteryMeasurements::operator =(
         const BatteryMeasurements& x)
 {
 
@@ -84,7 +84,7 @@ BatteryMeasurements& BatteryMeasurements::operator =(
     return *this;
 }
 
-BatteryMeasurements& BatteryMeasurements::operator =(
+dds::BatteryMeasurements& dds::BatteryMeasurements::operator =(
         BatteryMeasurements&& x)
 {
 
@@ -96,20 +96,20 @@ BatteryMeasurements& BatteryMeasurements::operator =(
     return *this;
 }
 
-bool BatteryMeasurements::operator ==(
+bool dds::BatteryMeasurements::operator ==(
         const BatteryMeasurements& x) const
 {
 
     return (m_voltage == x.m_voltage && m_current == x.m_current && m_temperature == x.m_temperature && m_timestamp_us == x.m_timestamp_us);
 }
 
-bool BatteryMeasurements::operator !=(
+bool dds::BatteryMeasurements::operator !=(
         const BatteryMeasurements& x) const
 {
     return !(*this == x);
 }
 
-size_t BatteryMeasurements::getMaxCdrSerializedSize(
+size_t dds::BatteryMeasurements::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
@@ -131,8 +131,8 @@ size_t BatteryMeasurements::getMaxCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-size_t BatteryMeasurements::getCdrSerializedSize(
-        const BatteryMeasurements& data,
+size_t dds::BatteryMeasurements::getCdrSerializedSize(
+        const dds::BatteryMeasurements& data,
         size_t current_alignment)
 {
     (void)data;
@@ -155,7 +155,7 @@ size_t BatteryMeasurements::getCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-void BatteryMeasurements::serialize(
+void dds::BatteryMeasurements::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
@@ -166,7 +166,7 @@ void BatteryMeasurements::serialize(
 
 }
 
-void BatteryMeasurements::deserialize(
+void dds::BatteryMeasurements::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
@@ -180,7 +180,7 @@ void BatteryMeasurements::deserialize(
  * @brief This function sets a value in member voltage
  * @param _voltage New value for member voltage
  */
-void BatteryMeasurements::voltage(
+void dds::BatteryMeasurements::voltage(
         float _voltage)
 {
     m_voltage = _voltage;
@@ -190,7 +190,7 @@ void BatteryMeasurements::voltage(
  * @brief This function returns the value of member voltage
  * @return Value of member voltage
  */
-float BatteryMeasurements::voltage() const
+float dds::BatteryMeasurements::voltage() const
 {
     return m_voltage;
 }
@@ -199,7 +199,7 @@ float BatteryMeasurements::voltage() const
  * @brief This function returns a reference to member voltage
  * @return Reference to member voltage
  */
-float& BatteryMeasurements::voltage()
+float& dds::BatteryMeasurements::voltage()
 {
     return m_voltage;
 }
@@ -208,7 +208,7 @@ float& BatteryMeasurements::voltage()
  * @brief This function sets a value in member current
  * @param _current New value for member current
  */
-void BatteryMeasurements::current(
+void dds::BatteryMeasurements::current(
         float _current)
 {
     m_current = _current;
@@ -218,7 +218,7 @@ void BatteryMeasurements::current(
  * @brief This function returns the value of member current
  * @return Value of member current
  */
-float BatteryMeasurements::current() const
+float dds::BatteryMeasurements::current() const
 {
     return m_current;
 }
@@ -227,7 +227,7 @@ float BatteryMeasurements::current() const
  * @brief This function returns a reference to member current
  * @return Reference to member current
  */
-float& BatteryMeasurements::current()
+float& dds::BatteryMeasurements::current()
 {
     return m_current;
 }
@@ -236,7 +236,7 @@ float& BatteryMeasurements::current()
  * @brief This function sets a value in member temperature
  * @param _temperature New value for member temperature
  */
-void BatteryMeasurements::temperature(
+void dds::BatteryMeasurements::temperature(
         float _temperature)
 {
     m_temperature = _temperature;
@@ -246,7 +246,7 @@ void BatteryMeasurements::temperature(
  * @brief This function returns the value of member temperature
  * @return Value of member temperature
  */
-float BatteryMeasurements::temperature() const
+float dds::BatteryMeasurements::temperature() const
 {
     return m_temperature;
 }
@@ -255,7 +255,7 @@ float BatteryMeasurements::temperature() const
  * @brief This function returns a reference to member temperature
  * @return Reference to member temperature
  */
-float& BatteryMeasurements::temperature()
+float& dds::BatteryMeasurements::temperature()
 {
     return m_temperature;
 }
@@ -264,7 +264,7 @@ float& BatteryMeasurements::temperature()
  * @brief This function sets a value in member timestamp_us
  * @param _timestamp_us New value for member timestamp_us
  */
-void BatteryMeasurements::timestamp_us(
+void dds::BatteryMeasurements::timestamp_us(
         uint64_t _timestamp_us)
 {
     m_timestamp_us = _timestamp_us;
@@ -274,7 +274,7 @@ void BatteryMeasurements::timestamp_us(
  * @brief This function returns the value of member timestamp_us
  * @return Value of member timestamp_us
  */
-uint64_t BatteryMeasurements::timestamp_us() const
+uint64_t dds::BatteryMeasurements::timestamp_us() const
 {
     return m_timestamp_us;
 }
@@ -283,13 +283,13 @@ uint64_t BatteryMeasurements::timestamp_us() const
  * @brief This function returns a reference to member timestamp_us
  * @return Reference to member timestamp_us
  */
-uint64_t& BatteryMeasurements::timestamp_us()
+uint64_t& dds::BatteryMeasurements::timestamp_us()
 {
     return m_timestamp_us;
 }
 
 
-size_t BatteryMeasurements::getKeyMaxCdrSerializedSize(
+size_t dds::BatteryMeasurements::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
@@ -299,14 +299,15 @@ size_t BatteryMeasurements::getKeyMaxCdrSerializedSize(
     return current_align;
 }
 
-bool BatteryMeasurements::isKeyDefined()
+bool dds::BatteryMeasurements::isKeyDefined()
 {
     return false;
 }
 
-void BatteryMeasurements::serializeKey(
+void dds::BatteryMeasurements::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
         
 }
+

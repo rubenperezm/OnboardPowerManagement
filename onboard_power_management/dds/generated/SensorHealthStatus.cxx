@@ -34,24 +34,24 @@ using namespace eprosima::fastcdr::exception;
 
 #include <utility>
 
-SensorHealthStatus::SensorHealthStatus()
+dds::SensorHealthStatus::SensorHealthStatus()
 {
-    // m_anyDegraded com.eprosima.idl.parser.typecode.PrimitiveTypeCode@589b3632
+    // m_anyDegraded com.eprosima.idl.parser.typecode.PrimitiveTypeCode@40e6dfe1
     m_anyDegraded = false;
-    // m_anyFailed com.eprosima.idl.parser.typecode.PrimitiveTypeCode@534df152
+    // m_anyFailed com.eprosima.idl.parser.typecode.PrimitiveTypeCode@3ec300f1
     m_anyFailed = false;
-    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@8e0379d
+    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7d68ef40
     m_timestamp_us = 0;
 
 }
 
-SensorHealthStatus::~SensorHealthStatus()
+dds::SensorHealthStatus::~SensorHealthStatus()
 {
 
 
 }
 
-SensorHealthStatus::SensorHealthStatus(
+dds::SensorHealthStatus::SensorHealthStatus(
         const SensorHealthStatus& x)
 {
     m_anyDegraded = x.m_anyDegraded;
@@ -59,7 +59,7 @@ SensorHealthStatus::SensorHealthStatus(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-SensorHealthStatus::SensorHealthStatus(
+dds::SensorHealthStatus::SensorHealthStatus(
         SensorHealthStatus&& x)
 {
     m_anyDegraded = x.m_anyDegraded;
@@ -67,7 +67,7 @@ SensorHealthStatus::SensorHealthStatus(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-SensorHealthStatus& SensorHealthStatus::operator =(
+dds::SensorHealthStatus& dds::SensorHealthStatus::operator =(
         const SensorHealthStatus& x)
 {
 
@@ -78,7 +78,7 @@ SensorHealthStatus& SensorHealthStatus::operator =(
     return *this;
 }
 
-SensorHealthStatus& SensorHealthStatus::operator =(
+dds::SensorHealthStatus& dds::SensorHealthStatus::operator =(
         SensorHealthStatus&& x)
 {
 
@@ -89,20 +89,20 @@ SensorHealthStatus& SensorHealthStatus::operator =(
     return *this;
 }
 
-bool SensorHealthStatus::operator ==(
+bool dds::SensorHealthStatus::operator ==(
         const SensorHealthStatus& x) const
 {
 
     return (m_anyDegraded == x.m_anyDegraded && m_anyFailed == x.m_anyFailed && m_timestamp_us == x.m_timestamp_us);
 }
 
-bool SensorHealthStatus::operator !=(
+bool dds::SensorHealthStatus::operator !=(
         const SensorHealthStatus& x) const
 {
     return !(*this == x);
 }
 
-size_t SensorHealthStatus::getMaxCdrSerializedSize(
+size_t dds::SensorHealthStatus::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
@@ -121,8 +121,8 @@ size_t SensorHealthStatus::getMaxCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-size_t SensorHealthStatus::getCdrSerializedSize(
-        const SensorHealthStatus& data,
+size_t dds::SensorHealthStatus::getCdrSerializedSize(
+        const dds::SensorHealthStatus& data,
         size_t current_alignment)
 {
     (void)data;
@@ -142,7 +142,7 @@ size_t SensorHealthStatus::getCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-void SensorHealthStatus::serialize(
+void dds::SensorHealthStatus::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
@@ -152,7 +152,7 @@ void SensorHealthStatus::serialize(
 
 }
 
-void SensorHealthStatus::deserialize(
+void dds::SensorHealthStatus::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
@@ -165,7 +165,7 @@ void SensorHealthStatus::deserialize(
  * @brief This function sets a value in member anyDegraded
  * @param _anyDegraded New value for member anyDegraded
  */
-void SensorHealthStatus::anyDegraded(
+void dds::SensorHealthStatus::anyDegraded(
         bool _anyDegraded)
 {
     m_anyDegraded = _anyDegraded;
@@ -175,7 +175,7 @@ void SensorHealthStatus::anyDegraded(
  * @brief This function returns the value of member anyDegraded
  * @return Value of member anyDegraded
  */
-bool SensorHealthStatus::anyDegraded() const
+bool dds::SensorHealthStatus::anyDegraded() const
 {
     return m_anyDegraded;
 }
@@ -184,7 +184,7 @@ bool SensorHealthStatus::anyDegraded() const
  * @brief This function returns a reference to member anyDegraded
  * @return Reference to member anyDegraded
  */
-bool& SensorHealthStatus::anyDegraded()
+bool& dds::SensorHealthStatus::anyDegraded()
 {
     return m_anyDegraded;
 }
@@ -193,7 +193,7 @@ bool& SensorHealthStatus::anyDegraded()
  * @brief This function sets a value in member anyFailed
  * @param _anyFailed New value for member anyFailed
  */
-void SensorHealthStatus::anyFailed(
+void dds::SensorHealthStatus::anyFailed(
         bool _anyFailed)
 {
     m_anyFailed = _anyFailed;
@@ -203,7 +203,7 @@ void SensorHealthStatus::anyFailed(
  * @brief This function returns the value of member anyFailed
  * @return Value of member anyFailed
  */
-bool SensorHealthStatus::anyFailed() const
+bool dds::SensorHealthStatus::anyFailed() const
 {
     return m_anyFailed;
 }
@@ -212,7 +212,7 @@ bool SensorHealthStatus::anyFailed() const
  * @brief This function returns a reference to member anyFailed
  * @return Reference to member anyFailed
  */
-bool& SensorHealthStatus::anyFailed()
+bool& dds::SensorHealthStatus::anyFailed()
 {
     return m_anyFailed;
 }
@@ -221,7 +221,7 @@ bool& SensorHealthStatus::anyFailed()
  * @brief This function sets a value in member timestamp_us
  * @param _timestamp_us New value for member timestamp_us
  */
-void SensorHealthStatus::timestamp_us(
+void dds::SensorHealthStatus::timestamp_us(
         uint64_t _timestamp_us)
 {
     m_timestamp_us = _timestamp_us;
@@ -231,7 +231,7 @@ void SensorHealthStatus::timestamp_us(
  * @brief This function returns the value of member timestamp_us
  * @return Value of member timestamp_us
  */
-uint64_t SensorHealthStatus::timestamp_us() const
+uint64_t dds::SensorHealthStatus::timestamp_us() const
 {
     return m_timestamp_us;
 }
@@ -240,13 +240,13 @@ uint64_t SensorHealthStatus::timestamp_us() const
  * @brief This function returns a reference to member timestamp_us
  * @return Reference to member timestamp_us
  */
-uint64_t& SensorHealthStatus::timestamp_us()
+uint64_t& dds::SensorHealthStatus::timestamp_us()
 {
     return m_timestamp_us;
 }
 
 
-size_t SensorHealthStatus::getKeyMaxCdrSerializedSize(
+size_t dds::SensorHealthStatus::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
@@ -256,14 +256,15 @@ size_t SensorHealthStatus::getKeyMaxCdrSerializedSize(
     return current_align;
 }
 
-bool SensorHealthStatus::isKeyDefined()
+bool dds::SensorHealthStatus::isKeyDefined()
 {
     return false;
 }
 
-void SensorHealthStatus::serializeKey(
+void dds::SensorHealthStatus::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
        
 }
+

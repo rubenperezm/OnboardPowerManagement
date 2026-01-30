@@ -34,27 +34,27 @@ using namespace eprosima::fastcdr::exception;
 
 #include <utility>
 
-LoadStatus::LoadStatus()
+dds::LoadStatus::LoadStatus()
 {
-    // m_payloadActive com.eprosima.idl.parser.typecode.PrimitiveTypeCode@fe18270
+    // m_payloadActive com.eprosima.idl.parser.typecode.PrimitiveTypeCode@68ceda24
     m_payloadActive = false;
-    // m_commsActive com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6fb0d3ed
+    // m_commsActive com.eprosima.idl.parser.typecode.PrimitiveTypeCode@281e3708
     m_commsActive = false;
-    // m_thermalActive com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6dde5c8c
+    // m_thermalActive com.eprosima.idl.parser.typecode.PrimitiveTypeCode@35a50a4c
     m_thermalActive = false;
-    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5123a213
+    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f021e6c
     m_timestamp_us = 0;
 
 }
 
-LoadStatus::~LoadStatus()
+dds::LoadStatus::~LoadStatus()
 {
 
 
 
 }
 
-LoadStatus::LoadStatus(
+dds::LoadStatus::LoadStatus(
         const LoadStatus& x)
 {
     m_payloadActive = x.m_payloadActive;
@@ -63,7 +63,7 @@ LoadStatus::LoadStatus(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-LoadStatus::LoadStatus(
+dds::LoadStatus::LoadStatus(
         LoadStatus&& x)
 {
     m_payloadActive = x.m_payloadActive;
@@ -72,7 +72,7 @@ LoadStatus::LoadStatus(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-LoadStatus& LoadStatus::operator =(
+dds::LoadStatus& dds::LoadStatus::operator =(
         const LoadStatus& x)
 {
 
@@ -84,7 +84,7 @@ LoadStatus& LoadStatus::operator =(
     return *this;
 }
 
-LoadStatus& LoadStatus::operator =(
+dds::LoadStatus& dds::LoadStatus::operator =(
         LoadStatus&& x)
 {
 
@@ -96,20 +96,20 @@ LoadStatus& LoadStatus::operator =(
     return *this;
 }
 
-bool LoadStatus::operator ==(
+bool dds::LoadStatus::operator ==(
         const LoadStatus& x) const
 {
 
     return (m_payloadActive == x.m_payloadActive && m_commsActive == x.m_commsActive && m_thermalActive == x.m_thermalActive && m_timestamp_us == x.m_timestamp_us);
 }
 
-bool LoadStatus::operator !=(
+bool dds::LoadStatus::operator !=(
         const LoadStatus& x) const
 {
     return !(*this == x);
 }
 
-size_t LoadStatus::getMaxCdrSerializedSize(
+size_t dds::LoadStatus::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
@@ -131,8 +131,8 @@ size_t LoadStatus::getMaxCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-size_t LoadStatus::getCdrSerializedSize(
-        const LoadStatus& data,
+size_t dds::LoadStatus::getCdrSerializedSize(
+        const dds::LoadStatus& data,
         size_t current_alignment)
 {
     (void)data;
@@ -155,7 +155,7 @@ size_t LoadStatus::getCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-void LoadStatus::serialize(
+void dds::LoadStatus::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
@@ -166,7 +166,7 @@ void LoadStatus::serialize(
 
 }
 
-void LoadStatus::deserialize(
+void dds::LoadStatus::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
@@ -180,7 +180,7 @@ void LoadStatus::deserialize(
  * @brief This function sets a value in member payloadActive
  * @param _payloadActive New value for member payloadActive
  */
-void LoadStatus::payloadActive(
+void dds::LoadStatus::payloadActive(
         bool _payloadActive)
 {
     m_payloadActive = _payloadActive;
@@ -190,7 +190,7 @@ void LoadStatus::payloadActive(
  * @brief This function returns the value of member payloadActive
  * @return Value of member payloadActive
  */
-bool LoadStatus::payloadActive() const
+bool dds::LoadStatus::payloadActive() const
 {
     return m_payloadActive;
 }
@@ -199,7 +199,7 @@ bool LoadStatus::payloadActive() const
  * @brief This function returns a reference to member payloadActive
  * @return Reference to member payloadActive
  */
-bool& LoadStatus::payloadActive()
+bool& dds::LoadStatus::payloadActive()
 {
     return m_payloadActive;
 }
@@ -208,7 +208,7 @@ bool& LoadStatus::payloadActive()
  * @brief This function sets a value in member commsActive
  * @param _commsActive New value for member commsActive
  */
-void LoadStatus::commsActive(
+void dds::LoadStatus::commsActive(
         bool _commsActive)
 {
     m_commsActive = _commsActive;
@@ -218,7 +218,7 @@ void LoadStatus::commsActive(
  * @brief This function returns the value of member commsActive
  * @return Value of member commsActive
  */
-bool LoadStatus::commsActive() const
+bool dds::LoadStatus::commsActive() const
 {
     return m_commsActive;
 }
@@ -227,7 +227,7 @@ bool LoadStatus::commsActive() const
  * @brief This function returns a reference to member commsActive
  * @return Reference to member commsActive
  */
-bool& LoadStatus::commsActive()
+bool& dds::LoadStatus::commsActive()
 {
     return m_commsActive;
 }
@@ -236,7 +236,7 @@ bool& LoadStatus::commsActive()
  * @brief This function sets a value in member thermalActive
  * @param _thermalActive New value for member thermalActive
  */
-void LoadStatus::thermalActive(
+void dds::LoadStatus::thermalActive(
         bool _thermalActive)
 {
     m_thermalActive = _thermalActive;
@@ -246,7 +246,7 @@ void LoadStatus::thermalActive(
  * @brief This function returns the value of member thermalActive
  * @return Value of member thermalActive
  */
-bool LoadStatus::thermalActive() const
+bool dds::LoadStatus::thermalActive() const
 {
     return m_thermalActive;
 }
@@ -255,7 +255,7 @@ bool LoadStatus::thermalActive() const
  * @brief This function returns a reference to member thermalActive
  * @return Reference to member thermalActive
  */
-bool& LoadStatus::thermalActive()
+bool& dds::LoadStatus::thermalActive()
 {
     return m_thermalActive;
 }
@@ -264,7 +264,7 @@ bool& LoadStatus::thermalActive()
  * @brief This function sets a value in member timestamp_us
  * @param _timestamp_us New value for member timestamp_us
  */
-void LoadStatus::timestamp_us(
+void dds::LoadStatus::timestamp_us(
         uint64_t _timestamp_us)
 {
     m_timestamp_us = _timestamp_us;
@@ -274,7 +274,7 @@ void LoadStatus::timestamp_us(
  * @brief This function returns the value of member timestamp_us
  * @return Value of member timestamp_us
  */
-uint64_t LoadStatus::timestamp_us() const
+uint64_t dds::LoadStatus::timestamp_us() const
 {
     return m_timestamp_us;
 }
@@ -283,13 +283,13 @@ uint64_t LoadStatus::timestamp_us() const
  * @brief This function returns a reference to member timestamp_us
  * @return Reference to member timestamp_us
  */
-uint64_t& LoadStatus::timestamp_us()
+uint64_t& dds::LoadStatus::timestamp_us()
 {
     return m_timestamp_us;
 }
 
 
-size_t LoadStatus::getKeyMaxCdrSerializedSize(
+size_t dds::LoadStatus::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
@@ -299,14 +299,15 @@ size_t LoadStatus::getKeyMaxCdrSerializedSize(
     return current_align;
 }
 
-bool LoadStatus::isKeyDefined()
+bool dds::LoadStatus::isKeyDefined()
 {
     return false;
 }
 
-void LoadStatus::serializeKey(
+void dds::LoadStatus::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
         
 }
+

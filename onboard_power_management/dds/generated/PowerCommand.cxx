@@ -35,24 +35,24 @@ using namespace eprosima::fastcdr::exception;
 #include <utility>
 
 
-PowerCommand::PowerCommand()
+dds::PowerCommand::PowerCommand()
 {
-    // m_mode com.eprosima.idl.parser.typecode.EnumTypeCode@770c2e6b
-    m_mode = ::OFF;
-    // m_emergencyShutdown com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a052a00
+    // m_mode com.eprosima.idl.parser.typecode.EnumTypeCode@7f77e91b
+    m_mode = dds::OFF;
+    // m_emergencyShutdown com.eprosima.idl.parser.typecode.PrimitiveTypeCode@44a664f2
     m_emergencyShutdown = false;
-    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4d826d77
+    // m_timestamp_us com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7f9fcf7f
     m_timestamp_us = 0;
 
 }
 
-PowerCommand::~PowerCommand()
+dds::PowerCommand::~PowerCommand()
 {
 
 
 }
 
-PowerCommand::PowerCommand(
+dds::PowerCommand::PowerCommand(
         const PowerCommand& x)
 {
     m_mode = x.m_mode;
@@ -60,7 +60,7 @@ PowerCommand::PowerCommand(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-PowerCommand::PowerCommand(
+dds::PowerCommand::PowerCommand(
         PowerCommand&& x)
 {
     m_mode = x.m_mode;
@@ -68,7 +68,7 @@ PowerCommand::PowerCommand(
     m_timestamp_us = x.m_timestamp_us;
 }
 
-PowerCommand& PowerCommand::operator =(
+dds::PowerCommand& dds::PowerCommand::operator =(
         const PowerCommand& x)
 {
 
@@ -79,7 +79,7 @@ PowerCommand& PowerCommand::operator =(
     return *this;
 }
 
-PowerCommand& PowerCommand::operator =(
+dds::PowerCommand& dds::PowerCommand::operator =(
         PowerCommand&& x)
 {
 
@@ -90,20 +90,20 @@ PowerCommand& PowerCommand::operator =(
     return *this;
 }
 
-bool PowerCommand::operator ==(
+bool dds::PowerCommand::operator ==(
         const PowerCommand& x) const
 {
 
     return (m_mode == x.m_mode && m_emergencyShutdown == x.m_emergencyShutdown && m_timestamp_us == x.m_timestamp_us);
 }
 
-bool PowerCommand::operator !=(
+bool dds::PowerCommand::operator !=(
         const PowerCommand& x) const
 {
     return !(*this == x);
 }
 
-size_t PowerCommand::getMaxCdrSerializedSize(
+size_t dds::PowerCommand::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
@@ -122,8 +122,8 @@ size_t PowerCommand::getMaxCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-size_t PowerCommand::getCdrSerializedSize(
-        const PowerCommand& data,
+size_t dds::PowerCommand::getCdrSerializedSize(
+        const dds::PowerCommand& data,
         size_t current_alignment)
 {
     (void)data;
@@ -143,7 +143,7 @@ size_t PowerCommand::getCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-void PowerCommand::serialize(
+void dds::PowerCommand::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
@@ -153,14 +153,14 @@ void PowerCommand::serialize(
 
 }
 
-void PowerCommand::deserialize(
+void dds::PowerCommand::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
     {
         uint32_t enum_value = 0;
         dcdr >> enum_value;
-        m_mode = (PowerMode)enum_value;
+        m_mode = (dds::PowerMode)enum_value;
     }
 
     dcdr >> m_emergencyShutdown;
@@ -171,8 +171,8 @@ void PowerCommand::deserialize(
  * @brief This function sets a value in member mode
  * @param _mode New value for member mode
  */
-void PowerCommand::mode(
-        PowerMode _mode)
+void dds::PowerCommand::mode(
+        dds::PowerMode _mode)
 {
     m_mode = _mode;
 }
@@ -181,7 +181,7 @@ void PowerCommand::mode(
  * @brief This function returns the value of member mode
  * @return Value of member mode
  */
-PowerMode PowerCommand::mode() const
+dds::PowerMode dds::PowerCommand::mode() const
 {
     return m_mode;
 }
@@ -190,7 +190,7 @@ PowerMode PowerCommand::mode() const
  * @brief This function returns a reference to member mode
  * @return Reference to member mode
  */
-PowerMode& PowerCommand::mode()
+dds::PowerMode& dds::PowerCommand::mode()
 {
     return m_mode;
 }
@@ -199,7 +199,7 @@ PowerMode& PowerCommand::mode()
  * @brief This function sets a value in member emergencyShutdown
  * @param _emergencyShutdown New value for member emergencyShutdown
  */
-void PowerCommand::emergencyShutdown(
+void dds::PowerCommand::emergencyShutdown(
         bool _emergencyShutdown)
 {
     m_emergencyShutdown = _emergencyShutdown;
@@ -209,7 +209,7 @@ void PowerCommand::emergencyShutdown(
  * @brief This function returns the value of member emergencyShutdown
  * @return Value of member emergencyShutdown
  */
-bool PowerCommand::emergencyShutdown() const
+bool dds::PowerCommand::emergencyShutdown() const
 {
     return m_emergencyShutdown;
 }
@@ -218,7 +218,7 @@ bool PowerCommand::emergencyShutdown() const
  * @brief This function returns a reference to member emergencyShutdown
  * @return Reference to member emergencyShutdown
  */
-bool& PowerCommand::emergencyShutdown()
+bool& dds::PowerCommand::emergencyShutdown()
 {
     return m_emergencyShutdown;
 }
@@ -227,7 +227,7 @@ bool& PowerCommand::emergencyShutdown()
  * @brief This function sets a value in member timestamp_us
  * @param _timestamp_us New value for member timestamp_us
  */
-void PowerCommand::timestamp_us(
+void dds::PowerCommand::timestamp_us(
         uint64_t _timestamp_us)
 {
     m_timestamp_us = _timestamp_us;
@@ -237,7 +237,7 @@ void PowerCommand::timestamp_us(
  * @brief This function returns the value of member timestamp_us
  * @return Value of member timestamp_us
  */
-uint64_t PowerCommand::timestamp_us() const
+uint64_t dds::PowerCommand::timestamp_us() const
 {
     return m_timestamp_us;
 }
@@ -246,13 +246,13 @@ uint64_t PowerCommand::timestamp_us() const
  * @brief This function returns a reference to member timestamp_us
  * @return Reference to member timestamp_us
  */
-uint64_t& PowerCommand::timestamp_us()
+uint64_t& dds::PowerCommand::timestamp_us()
 {
     return m_timestamp_us;
 }
 
 
-size_t PowerCommand::getKeyMaxCdrSerializedSize(
+size_t dds::PowerCommand::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
@@ -262,14 +262,15 @@ size_t PowerCommand::getKeyMaxCdrSerializedSize(
     return current_align;
 }
 
-bool PowerCommand::isKeyDefined()
+bool dds::PowerCommand::isKeyDefined()
 {
     return false;
 }
 
-void PowerCommand::serializeKey(
+void dds::PowerCommand::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
        
 }
+

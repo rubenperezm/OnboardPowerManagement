@@ -1,6 +1,8 @@
-struct LoadStatus {
-    boolean payloadActive;
-    boolean commsActive;
-    boolean thermalActive;
-    unsigned long long timestamp_us;
+module dds {
+    struct LoadStatus {
+        boolean payloadActive;
+        boolean commsActive;
+        boolean thermalActive;
+        unsigned long long timestamp_us;
+    };
 };
