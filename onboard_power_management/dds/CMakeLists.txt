@@ -2,13 +2,16 @@
 # DDS Interfaces library
 # =========================
 
-file(GLOB_RECURSE GENERATED_SOURCES
+file(GLOB GENERATED_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/generated/*.cxx"
 )
 
+file(GLOB SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
+)
+
 add_library(dds_interfaces
-    DDSContext.cpp
-    DDSCoreAdapter.cpp
+    ${SOURCES}
     ${GENERATED_SOURCES}
 )
 
