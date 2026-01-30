@@ -1,7 +1,6 @@
 #pragma once
 
 #include <fastdds/dds/publisher/DataWriter.hpp>
-#include <fastdds/dds/core/status/ReturnCode.hpp>
 
 template<typename MsgT>
 class GenericPublisher {
@@ -18,7 +17,7 @@ public:
 
         return writer_->write(
             const_cast<MsgT*>(&data)
-        ) == eprosima::fastdds::dds::RETCODE_OK;
+        ) == ReturnCode_t::RETCODE_OK;
     }
 
 private:

@@ -5,6 +5,8 @@
 #include <fastdds/dds/subscriber/SampleInfo.hpp>
 #include <functional>
 
+#include "DDSCoreAdapter.hpp"
+
 template<typename MsgT, typename ObjT>
 class GenericListener : public eprosima::fastdds::dds::DataReaderListener {
     public:
@@ -17,8 +19,9 @@ class GenericListener : public eprosima::fastdds::dds::DataReaderListener {
             eprosima::fastdds::dds::SampleInfo info;
 
             while (reader->take_next_sample(&data, &info) ==
-                eprosima::fastdds::dds::RETCODE_OK)
+                ReturnCode_t::RETCODE_OK)
             {
+                
                 if (info.valid_data) {
                     (object_->*callback_)(data);
                 }
