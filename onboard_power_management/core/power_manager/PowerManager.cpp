@@ -4,11 +4,11 @@
 #include "Log.hpp"
 
 PowerManager::PowerManager(const Config& config) : config(config), m_lastMeasurements(), m_lastHealthStatus(),
-    m_overcurrentStartTimestamp(), m_isShutdown(false), m_currentMode(PowerMode::NORMAL), m_voltageOverload(false),
+    m_overcurrentStartTimestamp(), m_isShutdown(false), m_currentMode(core::PowerMode::NORMAL), m_voltageOverload(false),
     m_voltageUnderload(false), m_currentOverload(false), m_sustainedOvercurrent(false), m_overtemperature(false),
     m_undertemperature(false), m_lastCommand() {}
 
-void PowerManager::processBatteryMeasurements(const BatteryMeasurements& measurements){
+void PowerManager::processBatteryMeasurements(const core::BatteryMeasurements& measurements){
         m_lastMeasurements = measurements;
 
         setVoltageFlags();
@@ -46,18 +46,22 @@ void PowerManager::setTemperatureFlags(){
     m_undertemperature = m_lastMeasurements.value().temperature < config.getMinTemperature();
 }
 
-void PowerManager::processSensorHealthStatus(const SensorHealthStatus& healthStatus){
+void PowerManager::processSensorHealthStatus(const core::SensorHealthStatus& healthStatus){
     m_lastHealthStatus = healthStatus;
 }
 
 void PowerManager::evaluate(){
+    core::PowerMode previousMode = m_currentMode;
+
     if (checkOffConditions()){
-        m_currentMode = PowerMode::OFF;
+        m_currentMode = core::PowerMode::OFF;
     } else if (checkSafeConditions()){
-        m_currentMode = PowerMode::SAFE;
+        m_currentMode = core::PowerMode::SAFE;
     } else {
-        m_currentMode = PowerMode::NORMAL;
+        m_currentMode = core::PowerMode::NORMAL;
     }
+
+    m_newCommandAvailable = (m_currentMode != previousMode);
 
     PowerCommand command;
     command.mode = m_currentMode;
@@ -79,12 +83,12 @@ bool PowerManager::checkSafeConditions() const {
         m_voltageUnderload || m_sustainedOvercurrent || m_undertemperature || m_overtemperature;
 }
 
-PowerMode PowerManager::getCurrentMode() const {
+core::PowerMode PowerManager::getCurrentMode() const {
     return m_currentMode;
 }
 
-std::optional<PowerCommand> PowerManager::getPowerCommand() const {
-    return m_lastCommand;
+std::optional<core::PowerCommand> PowerManager::getPowerCommand() const {
+    return m_newCommandAvailable ? m_lastCommand : std::nullopt;
 }
 
 bool PowerManager::getShutdown() const {
@@ -93,5 +97,5 @@ bool PowerManager::getShutdown() const {
 
 void PowerManager::setShutdown(const bool sd){
     m_isShutdown = sd;
-    m_currentMode = m_isShutdown ? PowerMode::OFF : PowerMode::NORMAL;
+    m_currentMode = m_isShutdown ? core::PowerMode::OFF : core::PowerMode::NORMAL;
 }

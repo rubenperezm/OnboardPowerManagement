@@ -38,14 +38,14 @@ class PowerManager {
         *
         * @param measurements Latest battery voltage, current and temperature.
         */
-        void processBatteryMeasurements(const BatteryMeasurements& measurements);
+        void processBatteryMeasurements(const core::BatteryMeasurements& measurements);
 
         /**
         * @brief Process consolidated sensor health status.
         *
         * @param healthStatus Consolidated health information from SensorHealthManager.
         */
-        void processSensorHealthStatus(const SensorHealthStatus& healthStatus);
+        void processSensorHealthStatus(const core::SensorHealthStatus& healthStatus);
 
         /**
         * @brief Evaluate current state and update internal operational mode.
@@ -59,14 +59,14 @@ class PowerManager {
         *
         * @return Current operational mode of the subsystem.
         */
-        PowerMode getCurrentMode() const;
+        core::PowerMode getCurrentMode() const;
 
         /**
         * @brief Get latest power command, if available.
         *
         * @return Optional power command.
         */
-        std::optional<PowerCommand> getPowerCommand() const;
+        std::optional<core::PowerCommand> getPowerCommand() const;
 
         void setShutdown(const bool sd);
         bool getShutdown() const;
@@ -81,12 +81,12 @@ class PowerManager {
         /**
          * @brief Latest processed measurements
          */
-        std::optional<BatteryMeasurements> m_lastMeasurements;
+        std::optional<core::BatteryMeasurements> m_lastMeasurements;
 
         /**
          * @brief Latest processed sensor health status
          */
-        std::optional<SensorHealthStatus>  m_lastHealthStatus;
+        std::optional<core::SensorHealthStatus>  m_lastHealthStatus;
 
         /**
          * @brief Timestamp when overcurrent condition started
@@ -101,7 +101,7 @@ class PowerManager {
         /**
          * @brief Current operational mode
          */
-        PowerMode m_currentMode;
+        core::PowerMode m_currentMode;
 
         /**
          * @brief Voltage overload flag
@@ -136,7 +136,12 @@ class PowerManager {
         /**
          * @brief Latest power command
          */
-        std::optional<PowerCommand> m_lastCommand;
+        std::optional<core::PowerCommand> m_lastCommand;
+
+        /**
+         * @brief Flag indicating if a new command is available
+         */
+        bool m_newCommandAvailable;
 
         /**
          * @brief Set voltage-related flags based on latest measurements
